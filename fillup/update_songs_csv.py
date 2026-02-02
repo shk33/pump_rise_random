@@ -60,8 +60,10 @@ if __name__ == "__main__":
     DATA_TS_PATH = 'data/data.ts'
     SONGS_CSV_PATH = 'fillup/songs.csv'
     
-    # Extract ONLY "fie2-" songs
-    fie2_songs = extract_songs_from_data_ts(DATA_TS_PATH, 'fie2-')
+    # Get category prefix from user
+    category_prefix = input("Enter the category prefix (e.g., 'fie2-', 'fex-'): ").strip()
+    
+    songs_to_process = extract_songs_from_data_ts(DATA_TS_PATH, category_prefix)
     
     # Overwrite songs.csv with these songs
-    overwrite_songs_csv(fie2_songs, SONGS_CSV_PATH)
+    overwrite_songs_csv(songs_to_process, SONGS_CSV_PATH)

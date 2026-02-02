@@ -7,7 +7,7 @@ type LeagueRule = {
 };
 
 // Represents a picked song with its specific chart type and level
-interface PickedSong extends Song {
+export interface PickedSong extends Song {
   selectedLevel: number;
   selectedType: 'Single' | 'Double';
 }
@@ -15,6 +15,15 @@ interface PickedSong extends Song {
 type League = {
   singles: LeagueRule[];
   doubles: LeagueRule[];
+};
+
+export const LEAGUE_DISPLAY_NAMES: Record<string, string> = {
+  SSS: "League - SSS",
+  S: "League - S",
+  A: "League - A",
+  B: "League - B",
+  C: "League - C",
+  D: "League - D",
 };
 
 const LEAGUES: Record<string, League> = {
@@ -38,7 +47,7 @@ const LEAGUES: Record<string, League> = {
       { count: 2, level: 21 },
       { count: 2, level: 22 },
       { count: 2, level: 23 },
-      { count: 1, level: 24, levelSelector: 'higher' },
+      { count: 1, level: 24 },
     ],
     doubles: [
       { count: 2, level: 21 },
@@ -55,7 +64,7 @@ const LEAGUES: Record<string, League> = {
       { count: 2, level: 21 },
       { count: 2, level: 22 },
       { count: 1, level: 23 },
-      { count: 1, level: 24, levelSelector: 'higher' },
+      { count: 1, level: 24 },
     ],
     doubles: [
       { count: 1, level: 19 },
@@ -80,6 +89,44 @@ const LEAGUES: Record<string, League> = {
       { count: 2, level: 20 },
       { count: 2, level: 21 },
       { count: 2, level: 22 },
+    ],
+  },
+  C: {
+    singles: [
+      { count: 1, level: 16 },
+      { count: 1, level: 17 },
+      { count: 2, level: 18 },
+      { count: 2, level: 19 },
+      { count: 1, level: 20 },
+      { count: 1, level: 21 },
+    ],
+    doubles: [
+      { count: 1, level: 16 },
+      { count: 1, level: 17 },
+      { count: 2, level: 18 },
+      { count: 2, level: 19 },
+      { count: 1, level: 20 },
+      { count: 1, level: 21 },
+    ],
+  },
+  D: {
+    singles: [
+      { count: 1, level: 10 },
+      { count: 1, level: 11 },
+      { count: 1, level: 12 },
+      { count: 1, level: 13 },
+      { count: 1, level: 14 },
+      { count: 2, level: 15 },
+      { count: 1, level: 16 },
+    ],
+    doubles: [
+      { count: 1, level: 10 },
+      { count: 1, level: 11 },
+      { count: 1, level: 12 },
+      { count: 1, level: 13 },
+      { count: 1, level: 14 },
+      { count: 2, level: 15 },
+      { count: 1, level: 16 },
     ],
   },
 };
@@ -124,7 +171,7 @@ const pickSongs = (
   return shuffled.slice(0, rule.count);
 };
 
-export const generateFullSession = (leagueId: string) => {
+export const generateFullSession = (leagueId: string): { singleSections: { title: string; data: PickedSong[] }[]; doubleSections: { title: string; data: PickedSong[] }[] } => {
   const league = LEAGUES[leagueId];
   if (!league) {
     throw new Error(`League with id "${leagueId}" not found.`);
@@ -195,9 +242,8 @@ export const generateFullSession = (leagueId: string) => {
         return levelA - levelB;
     });
 
-  return [
-    ...singleSections,
-    { title: '--- DOUBLES START ---', data: [] },
-    ...doubleSections,
-  ];
+  return {
+    singleSections,
+    doubleSections,
+  };
 };

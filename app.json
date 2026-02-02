@@ -22,7 +22,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/AppIcons/android/mipmap-xxxhdpi/ic_launcher_foreground.png",
+        "foregroundImage": "./assets/AppIcons/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.pumpriserandom"

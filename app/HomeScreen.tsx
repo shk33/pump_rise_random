@@ -1,29 +1,39 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
-import LeagueSelectionModal from '../components/LeagueSelectionModal';
+import LeagueSelectorList from '../components/LeagueSelectorList';
 import ResultsModal from '../components/ResultsModal';
+
+const BackgroundImage = require('../assets/backgrounds/pump_logo.png');
 
 const Container = styled.View`
   flex: 1;
-  background-color: black;
+  background-color: black; /* Fallback background color */
   align-items: center;
-  padding-top: 50px;
+  padding-top: 5px;
 `;
 
-const Header = styled.Text`
+const HeaderContainer = styled.View`
+  width: 100%;
+  padding: 25px 20px; /* Vertical and horizontal padding */
+  background-color: #282828; /* Slightly lighter dark gray */
+  justify-content: center;
+  align-items: center;
+  border-bottom-width: 1px; /* Add a bottom border */
+`;
+
+const HeaderTitle = styled.Text`
   color: white;
-  font-size: 20px;
-  align-self: flex-start;
-  margin-left: 20px;
+  font-size: 24px; /* Slightly larger font */
+  font-weight: bold; /* Make it bold */
 `;
 
 const MainContent = styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  margin-top: -22px;
 `;
 
 const DotBarContainer = styled.View`
@@ -83,7 +93,6 @@ const DotBar = () => (
 );
 
 export default function HomeScreen() {
-  const [leagueModalVisible, setLeagueModalVisible] = useState(false);
   const [resultsModalVisible, setResultsModalVisible] = useState(false);
   const [selectedLeagueId, setSelectedLeagueId] = useState('');
 
@@ -94,36 +103,15 @@ export default function HomeScreen() {
 
   return (
     <Container>
-      <Header>Pump it up Random</Header>
+      <HeaderContainer>
+        <HeaderTitle>
+          PIU: Rise - Random
+        </HeaderTitle>
+      </HeaderContainer>
 
       <MainContent>
-        <DotBar />
-
-        <ButtonRow>
-          <SideButton>
-            <ButtonTextSmall>RANDOM MODE</ButtonTextSmall>
-          </SideButton>
-
-          <TouchableOpacity onPress={() => setLeagueModalVisible(true)}>
-            <CenterButton colors={['#00ffff', '#008f8f']}>
-              <ButtonTextLarge>TRAINING</ButtonTextLarge>
-              <ButtonTextLarge>MODE</ButtonTextLarge>
-            </CenterButton>
-          </TouchableOpacity>
-
-          <SideButton>
-            <FontAwesome5 name="lock" size={24} color="gray" />
-          </SideButton>
-        </ButtonRow>
-
-        <DotBar />
+        <LeagueSelectorList onSelectLeague={handleSelectLeague} />
       </MainContent>
-
-      <LeagueSelectionModal
-        visible={leagueModalVisible}
-        onClose={() => setLeagueModalVisible(false)}
-        onSelectLeague={handleSelectLeague}
-      />
 
       {selectedLeagueId && (
         <ResultsModal

@@ -79,14 +79,14 @@ export default function LeagueSelectionModal({ visible, onClose, onSelectLeague 
       <ModalContainer>
         <ModalContent>
           <Header>
-            <Title>Random Lists</Title>
+            <Title>Select Your League</Title>
             <TouchableOpacity onPress={onClose}>
               <FontAwesome name="close" size={24} color="white" />
             </TouchableOpacity>
           </Header>
 
           <BodyText>
-            Default options: Only Songs...
+            Includes: Arcade and Remix Songs
           </BodyText>
 
           <LeagueButton

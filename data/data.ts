@@ -10,7 +10,6 @@ export interface Song {
     single: number[]; // e.g. [4, 7, 11, 16]
     double: number[]; // e.g. [12, 17, 23]
   };
-  bannerImage: string; // Using string URIs for now
   categoryIcon: string;
 }
 
@@ -23,7 +22,6 @@ export const songs: Song[] = [
       artist: "RiraN feat. Negoto Bunnyla",
       category: "Rise",
       levels: { single: [8, 12, 16, 18, 21], double: [14, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Cynical",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -32,7 +30,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "Rise",
       levels: { single: [11, 16, 18, 22], double: [13, 17, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Rise+Up",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -41,7 +38,6 @@ export const songs: Song[] = [
       artist: "Doin x neur6sia",
       category: "Rise",
       levels: { single: [6, 9, 12, 16, 19, 21], double: [11, 16, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Ercitite",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -50,7 +46,6 @@ export const songs: Song[] = [
       artist: "r300k",
       category: "Rise",
       levels: { single: [11, 14, 17, 20, 22], double: [14, 18, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Kings+Tomb",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -59,7 +54,6 @@ export const songs: Song[] = [
       artist: "WyvernP feat. Chobom",
       category: "Rise",
       levels: { single: [16, 18, 20], double: [18, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Dizzy",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -68,7 +62,6 @@ export const songs: Song[] = [
       artist: "Fiverwater",
       category: "Rise",
       levels: { single: [4, 7, 12, 17, 20, 22], double: [15, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Unfelicitas",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -77,7 +70,6 @@ export const songs: Song[] = [
       artist: "Applesoda",
       category: "Rise",
       levels: { single: [3, 7, 11, 16], double: [13, 17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pull+Me+Up",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -86,7 +78,6 @@ export const songs: Song[] = [
       artist: "Abel",
       category: "Rise",
       levels: { single: [12, 15, 17, 21], double: [17, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Antique",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -95,7 +86,6 @@ export const songs: Song[] = [
       artist: "EmoCosine",
       category: "Rise",
       levels: { single: [11, 14, 18, 20, 22], double: [16, 20, 22, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=We+Love",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -104,7 +94,6 @@ export const songs: Song[] = [
       artist: "INFX feat. Miori Celesta",
       category: "Rise",
       levels: { single: [8, 11, 15, 17, 19], double: [12, 16, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Lucky+Star",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -113,16 +102,14 @@ export const songs: Song[] = [
       artist: "TAG underground overlay",
       category: "Rise",
       levels: { single: [16, 19, 22, 24], double: [21, 24, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Reincarnate",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
       id: "rise-12",
-      title: "Sylaphzono",
+      title: "Sylaphz",
       artist: "ken",
       category: "Rise",
       levels: { single: [14, 17, 21, 23], double: [16, 19, 23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Sylaphzono",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -131,7 +118,6 @@ export const songs: Song[] = [
       artist: "Yamajet",
       category: "Rise",
       levels: { single: [16, 18, 20], double: [20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Skybound",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -140,7 +126,6 @@ export const songs: Song[] = [
       artist: "Sakuzyo",
       category: "Rise",
       levels: { single: [9, 15, 20, 23], double: [16, 22, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Transmission",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -149,7 +134,6 @@ export const songs: Song[] = [
       artist: "ERxi",
       category: "Rise",
       levels: { single: [16, 19, 22, 24], double: [18, 24, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Drop+Front",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -158,7 +142,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Rise",
       levels: { single: [12, 16, 18, 20], double: [14, 17, 19, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Love+Witch",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -167,7 +150,6 @@ export const songs: Song[] = [
       artist: "Essbee",
       category: "Rise",
       levels: { single: [10, 15, 19, 22, 24], double: [17, 21, 24, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Galactic",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -176,7 +158,6 @@ export const songs: Song[] = [
       artist: "Palami",
       category: "Rise",
       levels: { single: [13, 16, 19, 21, 23], double: [17, 22, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Burning",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -185,7 +166,6 @@ export const songs: Song[] = [
       artist: "Sobrem",
       category: "Rise",
       levels: { single: [14, 17, 20, 23], double: [18, 22, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pastry",
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     {
@@ -194,7 +174,38 @@ export const songs: Song[] = [
       artist: "litmus* feat. CielA",
       category: "Rise",
       levels: { single: [7, 9, 14, 17, 20], double: [11, 15, 17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Chess",
+      categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
+    },
+    {
+      id: "rise-21",
+      title: "Galactic Terminus",
+      artist: "Reku Mochizuki",
+      category: "Rise",
+      levels: { single: [3, 7, 11, 16, 18, 20], double: [13, 19, 22] },
+      categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
+    },
+    {
+      id: "rise-22",
+      title: "The Last Stand",
+      artist: "3R2",
+      category: "Rise",
+      levels: { single: [4, 7, 11, 16, 19, 21], double: [14, 20, 23] },
+      categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
+    },
+    {
+      id: "rise-23",
+      title: "Morrighan",
+      artist: "ryhki",
+      category: "Rise",
+      levels: { single: [16, 18, 20, 22], double: [20, 22, 24] },
+      categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
+    },
+    {
+      id: "rise-24",
+      title: "Under the Christmas Stars",
+      artist: "ryhki",
+      category: "Rise",
+      levels: { single: [2, 4, 7, 11, 15, 18], double: [5, 13, 16, 19] },
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
     // Legacy Category Songs
@@ -204,7 +215,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [2, 7, 10, 18, 19], double: [17, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Audition",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -213,7 +223,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 8, 11, 13, 18, 21], double: [15, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Extravaganza",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -222,7 +231,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 10, 12, 18], double: [12, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Audition+2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -231,7 +239,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 8, 12, 20], double: [10, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Naissance",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -240,7 +247,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 7, 12, 17, 19], double: [11, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Turkey+March",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -249,7 +255,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 12, 17], double: [13, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=With+My+Lover",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -258,7 +263,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [6, 13, 20], double: [16, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Interesting+View",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -267,7 +271,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 6, 14], double: [10, 14] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Nightmare",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -276,7 +279,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 8, 17], double: [8, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Close+Your+Eye",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -285,7 +287,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 9, 13], double: [11, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Free+Style",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -294,7 +295,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 6, 12], double: [7, 13] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Midnight+Blue",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -303,7 +303,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [9, 10, 21], double: [10, 17, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pizza",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -312,7 +311,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [9, 13, 20], double: [10, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Oh+Rosa",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -321,7 +319,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [6, 12, 16], double: [15, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=First+Love",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -330,7 +327,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 6, 8, 11, 17, 18], double: [10, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Solitary",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -339,7 +335,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 5, 13, 15, 20, 22], double: [16, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Mr+Larpus",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -348,7 +343,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 12, 16, 21], double: [12, 18, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Beethoven",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -357,7 +351,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 6, 9, 11, 14, 16], double: [12, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Dr+M",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -366,7 +359,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [2, 8, 12, 16], double: [15, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Emperor",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -375,7 +367,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 8, 11, 17, 19], double: [10, 17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Danger+Zone",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -384,7 +375,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 12, 16, 20], double: [13, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Winter",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -393,7 +383,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [2, 5, 13, 16, 20], double: [14, 16, 20, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Wisp",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -402,7 +391,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 9, 12, 15], double: [10, 16, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Csikos+Post",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -411,7 +399,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [11, 17, 19], double: [17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hello",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -420,7 +407,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 6, 9, 16, 18, 21], double: [19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Beat+of+War",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -429,7 +415,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [6, 9, 11, 17, 20, 21], double: [18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Chicken+Wing",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -438,7 +423,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [7, 12, 16, 20], double: [17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Radetzky",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -447,7 +431,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 8, 13, 18, 21], double: [12, 21, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Ep+1",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -456,7 +439,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [2, 5, 9, 16, 17], double: [18, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Audition+3",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -465,7 +447,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [9, 16, 19], double: [16, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Naissance+2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -474,7 +455,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 6, 10, 15], double: [15, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Monkey+Fingers",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -483,7 +463,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 9, 17, 20], double: [19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Blazing",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -492,7 +471,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 6, 13, 16, 18], double: [13, 19, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Amadeus",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -501,7 +479,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 8, 12, 16, 18], double: [15, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=XTream",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -510,7 +487,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 10, 15, 21], double: [14, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Get+Up",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -519,7 +495,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 5, 7, 8, 15], double: [9, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=J+Bong",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -528,7 +503,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [5, 8, 16, 19], double: [11, 19, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hi+Bi",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -537,7 +511,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 8, 9, 18], double: [19, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Solitary+2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -546,7 +519,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [3, 7, 11, 17, 20, 21], double: [13, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Canon+D",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -555,7 +527,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 5, 7, 11, 17, 21], double: [15, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Beat+of+War+2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -564,7 +535,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 8, 11, 18, 19], double: [12, 20, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Moonlight",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -573,7 +543,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 6, 11, 17, 19, 21], double: [19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Witch+Doctor",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -582,7 +551,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 11, 15, 22], double: [18, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Danger+Zone+2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -591,7 +559,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [2, 7, 13, 19, 20], double: [15, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Phantom",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -600,7 +567,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 6, 8, 17, 22], double: [19, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Papa+Gonzales",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -609,7 +575,6 @@ export const songs: Song[] = [
       artist: "BanYa",
       category: "Legacy",
       levels: { single: [4, 7, 12, 16], double: [8, 16] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Jump",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -618,7 +583,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [5, 8, 9, 17, 18, 19], double: [18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Witch+Doctor+1",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -627,7 +591,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [2, 5, 15, 17], double: [6, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Arch",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -636,7 +599,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [4, 9, 13, 18, 19, 23], double: [17, 22, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Chimera",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -645,7 +607,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [3, 9, 12, 15], double: [10, 14] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Love+Song",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -654,7 +615,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 6, 18], double: [8, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Do+U+Know",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -663,7 +623,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [5, 9, 17, 20], double: [7, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Gun+Rock",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -672,7 +631,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 5, 11, 15, 17], double: [10, 7, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Bullfighter",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -681,7 +639,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [3, 5, 10, 17], double: [4, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Ugly+Dee",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -690,7 +647,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [3, 4, 8, 19, 21, 22], double: [11, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Ep+2-1",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -699,7 +655,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [8, 17, 18, 21, 22], double: [19, 23, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Ep+2-2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -708,7 +663,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [7, 13, 17], double: [10, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Solitary+1.5",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -717,7 +671,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 11, 18, 20], double: [12, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Beat+The+Ghost",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -726,7 +679,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 6, 8, 17, 19], double: [11, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Caprice",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -735,7 +687,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [9, 15, 20], double: [10, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Money",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -744,7 +695,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 8, 17], double: [7, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Monkey+Fingers+2",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -753,7 +703,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [7, 12, 13, 16, 19, 21], double: [15, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Faster+Z",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -762,7 +711,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [3, 7, 13, 20], double: [15, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pumptris",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -771,7 +719,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [3, 7, 13, 20], double: [8, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Guitar+Man",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -780,7 +727,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [2, 6, 9, 15, 16, 19], double: [8, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Higgeldy",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -789,7 +735,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 7, 16], double: [8, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Jam+O+Beat",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -798,7 +743,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [3, 6, 7, 9, 16, 17], double: [11, 18, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Blaze+Emotion",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -807,7 +751,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [3, 7, 13, 20, 21], double: [14, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Cannon+X1",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -816,7 +759,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [6, 12, 17], double: [8, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Chopsticks",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -825,7 +767,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [3, 5, 12, 16], double: [8, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=People",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -834,7 +775,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 7, 10, 17, 19], double: [14, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=DJ+Otada",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -843,7 +783,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [1, 3, 5, 10, 17], double: [14, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=KOA",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -852,7 +791,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 10, 18, 19], double: [19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=My+Dreams",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -861,7 +799,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Legacy",
       levels: { single: [4, 7, 11, 17], double: [15, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Toccata",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     {
@@ -870,7 +807,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Legacy",
       levels: { single: [3, 5, 9, 17, 23], double: [21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Final+Ep+2-X",
       categoryIcon: "https://placehold.co/50/blue/FFF?text=Legacy",
     },
     // Fiesta Category Songs
@@ -880,7 +816,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Fiesta",
       levels: { single: [2, 9, 14, 20], double: [16, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=X-TREE",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -889,7 +824,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Fiesta",
       levels: { single: [6, 8, 10, 18, 19, 23], double: [13, 18, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Sorceress+Elise",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -898,7 +832,6 @@ export const songs: Song[] = [
       artist: "msgoon",
       category: "Fiesta",
       levels: { single: [4, 6, 12], double: [6, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Betrayer",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -907,7 +840,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Fiesta",
       levels: { single: [2, 7, 8, 17, 19, 20], double: [10, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=U+Got+2+Know",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -916,7 +848,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta",
       levels: { single: [4, 7, 13, 17, 19, 20], double: [15, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Destination",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -925,7 +856,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Fiesta",
       levels: { single: [15, 19, 21, 23], double: [16, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Vacuum",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -934,7 +864,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [5, 13, 18], double: [6, 16] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Reggae+Style",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -943,7 +872,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [4, 7, 11, 18], double: [13, 15, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Xenesis",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -952,7 +880,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [13, 19, 21], double: [14, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Arirang",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -961,7 +888,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [3, 5, 17], double: [5, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Tek",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -970,7 +896,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [4, 6, 10, 17, 19], double: [12, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hello+William",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -979,7 +904,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [3, 6, 10, 17], double: [13, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Turkey+Minimal",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -988,7 +912,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [5, 7, 11, 17], double: [12, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Get+Up+And+Go",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -997,7 +920,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [3, 7, 12, 16, 19, 21], double: [17, 19, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Phantom+Intermezzo",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -1006,7 +928,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [5, 13, 19], double: [19, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Mission+Possible",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -1015,7 +936,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta",
       levels: { single: [4, 6, 14, 17, 18, 19], double: [9, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pumping+Jumping",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -1024,7 +944,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Fiesta",
       levels: { single: [2, 4, 7, 17], double: [11, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Tepris",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
     {
@@ -1033,7 +952,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Fiesta",
       levels: { single: [14, 19, 21], double: [15, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Napalm",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=Fiesta",
     },
   
@@ -1044,7 +962,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Fiesta EX",
       levels: { single: [4, 7, 13, 17, 21, 23], double: [20, 24, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Cleaner",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1053,7 +970,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Fiesta EX",
       levels: { single: [6, 12, 18], double: [13, 19, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Interference",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1062,7 +978,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta EX",
       levels: { single: [4, 6, 9, 15, 17], double: [6, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Reality",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1071,7 +986,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta EX",
       levels: { single: [4, 7, 11, 17, 20], double: [13, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Take+Out",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1080,7 +994,6 @@ export const songs: Song[] = [
       artist: "MAX & Rorychesell",
       category: "Fiesta EX",
       levels: { single: [4, 6, 9, 14, 17], double: [8, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Butterfly",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1089,7 +1002,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Fiesta EX",
       levels: { single: [4, 7, 10, 16, 18, 20], double: [12, 18, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Overblow",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1098,7 +1010,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Fiesta EX",
       levels: { single: [1, 5, 9, 17], double: [7, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=We+Got+2+Know",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1107,7 +1018,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta EX",
       levels: { single: [4, 6, 9, 17, 18], double: [11, 17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hungarian+Dance",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1116,7 +1026,6 @@ export const songs: Song[] = [
       artist: "Banya Production",
       category: "Fiesta EX",
       levels: { single: [4, 6, 9, 12, 19], double: [15, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=The+Devil",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1125,7 +1034,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta EX",
       levels: { single: [3, 5, 10, 17, 20], double: [11, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Native",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1134,7 +1042,6 @@ export const songs: Song[] = [
       artist: "V.A.",
       category: "Fiesta EX",
       levels: { single: [3, 6, 10, 17], double: [17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pavane",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     {
@@ -1143,7 +1050,6 @@ export const songs: Song[] = [
       artist: "MAX&Seorryang",
       category: "Fiesta EX",
       levels: { single: [4, 6, 8, 16, 18], double: [13, 15, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Jonathan+Dream",
       categoryIcon: "https://placehold.co/50/orange/FFF?text=FiestaEX",
     },
     // Fiesta 2 Category Songs
@@ -1153,7 +1059,6 @@ export const songs: Song[] = [
       artist: "DM Ashura",
       category: "Fiesta 2",
       levels: { single: [4, 7, 11, 16, 18, 22], double: [12, 17, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Elise",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1162,7 +1067,6 @@ export const songs: Song[] = [
       artist: "BanYa & DM Ashura",
       category: "Fiesta 2",
       levels: { single: [12, 16, 19, 22], double: [17, 18, 23, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Ignis+Fatuus",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1171,7 +1075,6 @@ export const songs: Song[] = [
       artist: "BanYa & Cranky",
       category: "Fiesta 2",
       levels: { single: [7, 14, 17, 20, 21], double: [11, 16, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Danger+Zone+Cranky",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1180,7 +1083,6 @@ export const songs: Song[] = [
       artist: "BanYa & SynthWulf",
       category: "Fiesta 2",
       levels: { single: [11, 13, 17, 20], double: [14, 15, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hypnosis",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1189,7 +1091,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Fiesta 2",
       levels: { single: [13, 18, 22], double: [15, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=FFF",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1198,7 +1099,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta 2",
       levels: { single: [3, 6, 10, 14, 16], double: [12, 16, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Unique",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1207,7 +1107,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Fiesta 2",
       levels: { single: [4, 7, 13, 18], double: [13, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Accident",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1216,7 +1115,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Fiesta 2",
       levels: { single: [4, 7, 11, 18], double: [14, 19, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=D",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1225,7 +1123,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Fiesta 2",
       levels: { single: [3, 6, 9, 17, 18], double: [5, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Rocking",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1234,7 +1131,6 @@ export const songs: Song[] = [
       artist: "Yak Won",
       category: "Fiesta 2",
       levels: { single: [4, 7, 13, 16, 19], double: [14, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Lucid",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1243,7 +1139,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta 2",
       levels: { single: [5, 7, 10, 18, 20], double: [12, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Log+In",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1252,7 +1147,6 @@ export const songs: Song[] = [
       artist: "Yak Won",
       category: "Fiesta 2",
       levels: { single: [8, 13, 17, 21], double: [14, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Windmill",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1261,7 +1155,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Fiesta 2",
       levels: { single: [4, 6, 9, 14, 17], double: [9, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Follow+Me",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1270,7 +1163,6 @@ export const songs: Song[] = [
       artist: "SID-SOUND",
       category: "Fiesta 2",
       levels: { single: [1, 3, 5, 8, 13], double: [7, 10] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Yeo+Rae+A",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
     {
@@ -1279,7 +1171,6 @@ export const songs: Song[] = [
       artist: "SQUAR",
       category: "Fiesta 2",
       levels: { single: [13, 16, 21], double: [15, 20, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Mental+Rider",
       categoryIcon: "https://placehold.co/50/cyan/FFF?text=Fiesta2",
     },
   
@@ -1290,7 +1181,6 @@ export const songs: Song[] = [
       artist: "M2U",
       category: "Prime",
       levels: { single: [4, 7, 10, 16, 18], double: [12, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Nemesis",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1299,7 +1189,6 @@ export const songs: Song[] = [
       artist: "M2U",
       category: "Prime",
       levels: { single: [8, 11, 14, 18], double: [12, 15, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Katkoi",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1308,7 +1197,6 @@ export const songs: Song[] = [
       artist: "Warak",
       category: "Prime",
       levels: { single: [3, 7, 9, 17], double: [12, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Latino+Virus",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1317,7 +1205,6 @@ export const songs: Song[] = [
       artist: "Warak",
       category: "Prime",
       levels: { single: [4, 9, 14], double: [10, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Elysium",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1326,7 +1213,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "Prime",
       levels: { single: [9, 17, 21, 23], double: [18, 23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Yog+Sothoth",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1335,7 +1221,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "Prime",
       levels: { single: [4, 7, 10, 18], double: [13, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Silhouette",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1344,7 +1229,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "Prime",
       levels: { single: [4, 7, 10, 16, 18], double: [11, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Chinese+Restaurant",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1353,7 +1237,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "Prime",
       levels: { single: [4, 7, 11, 19, 22], double: [13, 19, 21, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Avalanche",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1362,7 +1245,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "Prime",
       levels: { single: [8, 12, 17, 19], double: [12, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Force+of+Ra",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1371,7 +1253,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [4, 7, 12, 16, 19], double: [10, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Requiem",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1380,7 +1261,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [4, 6, 10, 17, 18], double: [5, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Crazy",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1389,7 +1269,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [4, 7, 10, 16, 18], double: [11, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=B2",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1398,7 +1277,6 @@ export const songs: Song[] = [
       artist: "Paul Bazooka",
       category: "Prime",
       levels: { single: [3, 5, 10, 16, 18], double: [9, 17, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Meteorize",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1407,7 +1285,6 @@ export const songs: Song[] = [
       artist: "Paul Bazooka",
       category: "Prime",
       levels: { single: [5, 15, 20], double: [9, 16] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Mad5cience",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1416,7 +1293,6 @@ export const songs: Song[] = [
       artist: "Gentle Stick",
       category: "Prime",
       levels: { single: [4, 7, 11, 19], double: [12, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hestia",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1425,7 +1301,6 @@ export const songs: Song[] = [
       artist: "Gentle Stick",
       category: "Prime",
       levels: { single: [4, 7, 11, 18], double: [12, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Amphitryon",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1434,7 +1309,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Prime",
       levels: { single: [12, 15, 17, 21], double: [13, 18, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Leakage+Voltage",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1443,7 +1317,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Prime",
       levels: { single: [3, 6, 9, 15], double: [6, 16] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Removable+Disk",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1452,7 +1325,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Prime",
       levels: { single: [4, 7, 10, 14, 16], double: [12, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Super+Fantasy",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1461,7 +1333,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Prime",
       levels: { single: [4, 6, 8, 13, 17], double: [11, 14, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Violet+Perfume",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1470,7 +1341,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Prime",
       levels: { single: [4, 7, 9, 18], double: [11, 19, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Red+Swan",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1479,7 +1349,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Prime",
       levels: { single: [5, 10, 14, 18, 22], double: [13, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hyacinth",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1488,7 +1357,6 @@ export const songs: Song[] = [
       artist: "Yahpp",
       category: "Prime",
       levels: { single: [2, 9, 17], double: [5, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Blaze+Emotion",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1497,7 +1365,6 @@ export const songs: Song[] = [
       artist: "SLAM",
       category: "Prime",
       levels: { single: [16, 20, 23, 25], double: [22, 24, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=1950",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1506,7 +1373,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [3, 6, 10, 14, 18, 19], double: [7, 11, 16, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Sugar+Conspiracy",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1515,7 +1381,6 @@ export const songs: Song[] = [
       artist: "DM Ashura",
       category: "Prime",
       levels: { single: [4, 6, 10, 17, 19], double: [11, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Allegro",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1524,7 +1389,6 @@ export const songs: Song[] = [
       artist: "DM Ashura",
       category: "Prime",
       levels: { single: [7, 11, 16, 19, 23], double: [14, 20, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Annihilator",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1533,7 +1397,6 @@ export const songs: Song[] = [
       artist: "DM Ashura feat. Skizzo & Hanna",
       category: "Prime",
       levels: { single: [3, 5, 10, 12, 18, 21], double: [12, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Move+That+Body",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1542,7 +1405,6 @@ export const songs: Song[] = [
       artist: "r300k",
       category: "Prime",
       levels: { single: [3, 5, 8, 15, 19], double: [10, 17, 20, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Scorpion+King",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1551,7 +1413,6 @@ export const songs: Song[] = [
       artist: "SynthWulf",
       category: "Prime",
       levels: { single: [10, 16, 20], double: [11, 17, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Point+Zero+One",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1560,7 +1421,6 @@ export const songs: Song[] = [
       artist: "Cashew",
       category: "Prime",
       levels: { single: [7, 11, 16, 19], double: [13, 18, 21, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Red+Snow",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1569,7 +1429,6 @@ export const songs: Song[] = [
       artist: "Cashew",
       category: "Prime",
       levels: { single: [4, 6, 10, 17], double: [12, 17] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Campanella",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1578,7 +1437,6 @@ export const songs: Song[] = [
       artist: "CYO Style & Henohenomoheji",
       category: "Prime",
       levels: { single: [1, 3, 6, 14], double: [6, 15] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=You+Again",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1587,7 +1445,6 @@ export const songs: Song[] = [
       artist: "CYO Style",
       category: "Prime",
       levels: { single: [9, 14, 19, 22], double: [14, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Robot+Battle",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1596,7 +1453,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [3, 6, 10, 16, 18], double: [11, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Reminiscence",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1605,7 +1461,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [3, 6, 10, 15, 17, 18], double: [11, 16, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Moment+Day",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1614,7 +1469,6 @@ export const songs: Song[] = [
       artist: "MAZO",
       category: "Prime",
       levels: { single: [7, 14, 16], double: [5, 13, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Break+It+Down",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1623,7 +1477,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime",
       levels: { single: [6, 10, 16, 18], double: [11, 15, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=HYPERCUBE",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     {
@@ -1632,7 +1485,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Prime",
       levels: { single: [6, 11, 16, 19], double: [13, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Like+Me",
       categoryIcon: "https://placehold.co/50/green/FFF?text=Prime",
     },
     // Prime 2 Category Songs
@@ -1642,7 +1494,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Prime 2",
       levels: { single: [3, 5, 9, 13, 16], double: [8, 14, 17, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Last+Rebirth",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1651,7 +1502,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "Prime 2",
       levels: { single: [4, 7, 12, 17, 19], double: [11, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Super+Capriccio",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1660,7 +1510,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "Prime 2",
       levels: { single: [7, 11, 15, 18, 22], double: [10, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hellfire",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1669,7 +1518,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "Prime 2",
       levels: { single: [8, 12, 17, 20], double: [10, 14, 19, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Tritium",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1678,7 +1526,6 @@ export const songs: Song[] = [
       artist: "HyuN feat. LyuU",
       category: "Prime 2",
       levels: { single: [7, 11, 15, 18, 22], double: [15, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=CROSS+OVER",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1687,7 +1534,6 @@ export const songs: Song[] = [
       artist: "nato feat. Skizzo",
       category: "Prime 2",
       levels: { single: [4, 8, 13, 18, 20], double: [9, 17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=God+Mode",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1696,7 +1542,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "Prime 2",
       levels: { single: [12, 16, 19, 21, 24], double: [18, 23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Shub+Niggurath",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1705,7 +1550,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Prime 2",
       levels: { single: [11, 16, 18, 22, 24], double: [14, 17, 22, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Further",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1714,7 +1558,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Prime 2",
       levels: { single: [11, 16, 19, 23], double: [16, 22, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Quick+Brown+Fox",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1723,7 +1566,6 @@ export const songs: Song[] = [
       artist: "Tatsh feat. Chisa Uezono",
       category: "Prime 2",
       levels: { single: [13, 16, 18], double: [8, 15, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Silver+Beat",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1732,7 +1574,6 @@ export const songs: Song[] = [
       artist: "Lunatic Sounds",
       category: "Prime 2",
       levels: { single: [7, 13, 17, 19], double: [9, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Bring+Back",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1741,7 +1582,6 @@ export const songs: Song[] = [
       artist: "Lunatic Sounds",
       category: "Prime 2",
       levels: { single: [4, 8, 12, 16, 19], double: [12, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Break+Out",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1750,7 +1590,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime 2",
       levels: { single: [4, 7, 12, 16, 19, 20], double: [11, 18, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Sarabande",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1759,7 +1598,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime 2",
       levels: { single: [4, 7, 9, 16, 18, 21], double: [12, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Kasou+Shinja",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1768,7 +1606,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Prime 2",
       levels: { single: [5, 10, 15, 18], double: [8, 15, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Overblow2",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1777,7 +1614,6 @@ export const songs: Song[] = [
       artist: "mzet:-P",
       category: "Prime 2",
       levels: { single: [8, 12, 16, 19], double: [10, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Passing+Rider",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1786,7 +1622,6 @@ export const songs: Song[] = [
       artist: "mzet:-P",
       category: "Prime 2",
       levels: { single: [4, 9, 16, 20], double: [10, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Arcana+Force",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1795,7 +1630,6 @@ export const songs: Song[] = [
       artist: "DM Ashura",
       category: "Prime 2",
       levels: { single: [6, 11, 14, 18, 20], double: [15, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Allegro+Furioso",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1804,7 +1638,6 @@ export const songs: Song[] = [
       artist: "void",
       category: "Prime 2",
       levels: { single: [3, 5, 8, 15, 19], double: [10, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Anguished",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1813,7 +1646,6 @@ export const songs: Song[] = [
       artist: "void feat. Kana",
       category: "Prime 2",
       levels: { single: [7, 11, 17, 20], double: [11, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Utsushiyo",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1822,7 +1654,6 @@ export const songs: Song[] = [
       artist: "MAZO",
       category: "Prime 2",
       levels: { single: [3, 5, 10, 15], double: [10, 16] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Hey+U",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1831,7 +1662,6 @@ export const songs: Song[] = [
       artist: "typeMARS",
       category: "Prime 2",
       levels: { single: [7, 10, 14, 17, 19, 21], double: [9, 13, 17, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Awakening",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1840,7 +1670,6 @@ export const songs: Song[] = [
       artist: "D_AAN",
       category: "Prime 2",
       levels: { single: [15, 18, 21, 24], double: [19, 22, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=ESCAPE",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1849,7 +1678,6 @@ export const songs: Song[] = [
       artist: "Cashew",
       category: "Prime 2",
       levels: { single: [8, 11, 14, 17, 19], double: [12, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Waltz+of+Doge",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
     {
@@ -1858,7 +1686,6 @@ export const songs: Song[] = [
       artist: "DJ Counterforce",
       category: "Prime 2",
       levels: { single: [7, 11, 16, 18], double: [10, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Heart+Attack",
       categoryIcon: "https://placehold.co/50/teal/FFF?text=Prime2",
     },
   
@@ -1869,7 +1696,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "XX",
       levels: { single: [4, 6, 10, 16, 18, 21], double: [7, 13, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Wedding+Crashers",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1878,16 +1704,14 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "XX",
       levels: { single: [3, 5, 8, 11, 15, 18], double: [10, 16, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Switronic",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
       id: "xx-3",
-      title: "Olbiteration",
+      title: "Obliteration",
       artist: "ATAS",
       category: "XX",
       levels: { single: [7, 10, 15, 18], double: [10, 16, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Olbiteration",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1896,7 +1720,6 @@ export const songs: Song[] = [
       artist: "ATAS",
       category: "XX",
       levels: { single: [3, 6, 11, 16, 19], double: [7, 12, 17, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Transacaglia",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1905,7 +1728,6 @@ export const songs: Song[] = [
       artist: "SLAM",
       category: "XX",
       levels: { single: [16, 21, 23], double: [22, 25, 27] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=1949",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1914,7 +1736,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "XX",
       levels: { single: [8, 12, 17, 20], double: [14, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=JANUS",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1923,7 +1744,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "XX",
       levels: { single: [3, 7, 12, 17, 20], double: [6, 14, 18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=I+Want+U",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1932,7 +1752,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "XX",
       levels: { single: [6, 10, 15, 19], double: [12, 17, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=District+1",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1941,7 +1760,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "XX",
       levels: { single: [13, 17, 19, 21, 23], double: [17, 20, 23, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Nyarlathotep",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1950,7 +1768,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "XX",
       levels: { single: [10, 14, 17, 21, 23], double: [13, 18, 22, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Rabbit+Coaster",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1959,7 +1776,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "XX",
       levels: { single: [10, 16, 19, 21], double: [11, 17, 21, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Lepton+Strike",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1968,7 +1784,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "XX",
       levels: { single: [12, 19, 22, 24], double: [14, 21, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Skeptic",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1977,7 +1792,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "XX",
       levels: { single: [7, 10, 16, 20, 22], double: [11, 17, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Iolite+Sky",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1986,7 +1800,6 @@ export const songs: Song[] = [
       artist: "Pory",
       category: "XX",
       levels: { single: [3, 6, 10, 18, 20], double: [9, 13, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Percent+X",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -1995,7 +1808,6 @@ export const songs: Song[] = [
       artist: "Pory",
       category: "XX",
       levels: { single: [5, 9, 16, 19], double: [12, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=La+Cinquantaine",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2004,7 +1816,6 @@ export const songs: Song[] = [
       artist: "KIEN",
       category: "XX",
       levels: { single: [8, 13, 18, 20], double: [19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Le+Grand+Rouge",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2013,7 +1824,6 @@ export const songs: Song[] = [
       artist: "StaticSphere & FUGU SUISAN",
       category: "XX",
       levels: { single: [12, 16, 18, 20], double: [13, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Carmen+Bus",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2022,7 +1832,6 @@ export const songs: Song[] = [
       artist: "HyuN",
       category: "XX",
       levels: { single: [4, 7, 12, 17], double: [13, 18] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Macaron+Day",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2031,7 +1840,6 @@ export const songs: Song[] = [
       artist: "Fiverwater",
       category: "XX",
       levels: { single: [3, 7, 11, 17, 20], double: [12, 17, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Ice+of+Death",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2040,7 +1848,6 @@ export const songs: Song[] = [
       artist: "Quree",
       category: "XX",
       levels: { single: [3, 6, 10, 15, 21], double: [8, 16, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Poseidon",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2049,7 +1856,6 @@ export const songs: Song[] = [
       artist: "QWertism",
       category: "XX",
       levels: { single: [3, 5, 8, 15, 18, 21], double: [12, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Adrenaline",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2058,7 +1864,6 @@ export const songs: Song[] = [
       artist: "Applesoda",
       category: "XX",
       levels: { single: [6, 12, 17, 20], double: [10, 13, 18, 22, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=VANISH",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2067,7 +1872,6 @@ export const songs: Song[] = [
       artist: "Applesoda",
       category: "XX",
       levels: { single: [9, 13, 17, 20], double: [14, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Pumpnia",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2076,7 +1880,6 @@ export const songs: Song[] = [
       artist: "Garlic Squad",
       category: "XX",
       levels: { single: [13, 17, 20], double: [16, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Kimchi+Fingers",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2085,25 +1888,22 @@ export const songs: Song[] = [
       artist: "DM Ashura",
       category: "XX",
       levels: { single: [4, 13, 16, 19, 21], double: [18, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Orbit+Stabilizer",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
       id: "xx-26",
-      title: "DESTRUCTIMATE",
+      title: "DESTRUCIMATE",
       artist: "KUROSAK",
       category: "XX",
       levels: { single: [9, 12, 16, 19, 21], double: [14, 18, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=DESTRUCTIMATE",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
       id: "xx-27",
-      title: "Clematis Rhapsodia",
+      title: "Clematis Rapsodia",
       artist: "Jehezukiel",
       category: "XX",
       levels: { single: [11, 15, 18, 22], double: [13, 16, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Clematis",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2112,7 +1912,6 @@ export const songs: Song[] = [
       artist: "D_AAN",
       category: "XX",
       levels: { single: [10, 16, 20], double: [12, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Wicked+Legend",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2121,7 +1920,6 @@ export const songs: Song[] = [
       artist: "memme",
       category: "XX",
       levels: { single: [4, 7, 11, 14, 17, 20], double: [13, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Tantanmen",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2130,7 +1928,6 @@ export const songs: Song[] = [
       artist: "Cashew feat. Romelon",
       category: "XX",
       levels: { single: [3, 6, 10, 15, 18, 21], double: [11, 16, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Stardream",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2139,7 +1936,6 @@ export const songs: Song[] = [
       artist: "nato",
       category: "XX",
       levels: { single: [4, 7, 11, 17, 19, 21], double: [12, 18, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Cygnus",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2148,7 +1944,6 @@ export const songs: Song[] = [
       artist: "SHK",
       category: "XX",
       levels: { single: [2, 4, 7, 11, 16, 19], double: [6, 12, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Tropicanic",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     {
@@ -2157,7 +1952,6 @@ export const songs: Song[] = [
       artist: "nato feat. Skizzo",
       category: "XX",
       levels: { single: [8, 13, 17, 21], double: [13, 18, 20, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=God+Mode+2",
       categoryIcon: "https://placehold.co/50/gray/FFF?text=XX",
     },
     // Variety Category Songs
@@ -2167,7 +1961,6 @@ export const songs: Song[] = [
       artist: "Sanxion7",
       category: "Variety",
       levels: { single: [4, 7, 11, 19, 22], double: [14, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Gargoyle",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2176,7 +1969,6 @@ export const songs: Song[] = [
       artist: "Siromaru + Cranky",
       category: "Variety",
       levels: { single: [6, 11, 15, 17, 19, 22], double: [12, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Conflict",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2185,7 +1977,6 @@ export const songs: Song[] = [
       artist: "NOMA",
       category: "Variety",
       levels: { single: [5, 8, 11, 16, 19, 22], double: [8, 13, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=BRAIN+POWER",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2194,7 +1985,6 @@ export const songs: Song[] = [
       artist: "Junk",
       category: "Variety",
       levels: { single: [2, 4, 7, 10, 16, 19], double: [11, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Life+is+Piano",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2203,7 +1993,6 @@ export const songs: Song[] = [
       artist: "LeaF",
       category: "Variety",
       levels: { single: [11, 15, 17, 21, 23], double: [17, 19, 23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Mopemope",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2212,7 +2001,6 @@ export const songs: Song[] = [
       artist: "EBIMAYO",
       category: "Variety",
       levels: { single: [8, 12, 16, 18, 21], double: [12, 16, 20, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=GOODTEK",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2221,7 +2009,6 @@ export const songs: Song[] = [
       artist: "sakuzyo",
       category: "Variety",
       levels: { single: [6, 9, 12, 15, 18, 21], double: [6, 16, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Altale",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2230,7 +2017,6 @@ export const songs: Song[] = [
       artist: "Morimori Atsushi",
       category: "Variety",
       levels: { single: [11, 14, 17, 19, 21, 23], double: [16, 21, 23, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=PUPA",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2239,7 +2025,6 @@ export const songs: Song[] = [
       artist: "xi",
       category: "Variety",
       levels: { single: [12, 18, 20, 22], double: [12, 20, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Halcyon",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2248,7 +2033,6 @@ export const songs: Song[] = [
       artist: "sakuzyo",
       category: "Variety",
       levels: { single: [7, 13, 18, 22], double: [15, 20, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Destr0yer",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2257,7 +2041,6 @@ export const songs: Song[] = [
       artist: "Xyris",
       category: "Variety",
       levels: { single: [13, 16, 19, 22], double: [17, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Crash+Landing",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2266,7 +2049,6 @@ export const songs: Song[] = [
       artist: "Camellia & Nanahira",
       category: "Variety",
       levels: { single: [3, 6, 10, 17, 19, 22], double: [11, 20, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Bassbook",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2275,7 +2057,6 @@ export const songs: Song[] = [
       artist: "Ice",
       category: "Variety",
       levels: { single: [13, 16, 20, 22], double: [18, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Entrance",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2284,7 +2065,6 @@ export const songs: Song[] = [
       artist: "RISH feat. Choko",
       category: "Variety",
       levels: { single: [16, 18, 21, 23], double: [18, 22, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Bamboo",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2293,7 +2073,6 @@ export const songs: Song[] = [
       artist: "TAG",
       category: "Variety",
       levels: { single: [15, 19, 22, 24], double: [17, 20, 23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=PHYSALIS",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2302,7 +2081,6 @@ export const songs: Song[] = [
       artist: "xi",
       category: "Variety",
       levels: { single: [15, 17, 19, 22, 24], double: [17, 21, 24, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Aragami",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2311,7 +2089,6 @@ export const songs: Song[] = [
       artist: "eicateve",
       category: "Variety",
       levels: { single: [12, 16, 19, 22], double: [16, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=RIP",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2320,7 +2097,6 @@ export const songs: Song[] = [
       artist: "EBIMAYO",
       category: "Variety",
       levels: { single: [4, 7, 12, 16, 20], double: [13, 18, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=GOODBOUNCE",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2329,7 +2105,6 @@ export const songs: Song[] = [
       artist: "ryhki",
       category: "Variety",
       levels: { single: [7, 11, 15, 17, 20], double: [12, 16, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Acquire",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2338,7 +2113,6 @@ export const songs: Song[] = [
       artist: "kanone",
       category: "Variety",
       levels: { single: [10, 15, 18, 21], double: [13, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Cosmic+Railroad",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2347,7 +2121,6 @@ export const songs: Song[] = [
       artist: "uma vs. Morimori Atsushi",
       category: "Variety",
       levels: { single: [12, 15, 19, 21, 23], double: [18, 22, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=End+of+Dream",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2356,7 +2129,6 @@ export const songs: Song[] = [
       artist: "Cranky",
       category: "Variety",
       levels: { single: [11, 15, 17, 19, 22], double: [13, 18, 21, 24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Phalanx",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2365,7 +2137,6 @@ export const songs: Song[] = [
       artist: "Cranky",
       category: "Variety",
       levels: { single: [8, 12, 16, 19, 21], double: [10, 14, 18, 21, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Danger",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2374,7 +2145,6 @@ export const songs: Song[] = [
       artist: "DASU",
       category: "Variety",
       levels: { single: [12, 16, 20], double: [8, 21] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=8+6",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2383,7 +2153,6 @@ export const songs: Song[] = [
       artist: "Dasu feat. Kagamine Len",
       category: "Variety",
       levels: { single: [11, 15, 18], double: [16, 19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Nakakapag",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2392,7 +2161,6 @@ export const songs: Song[] = [
       artist: "D_AAN",
       category: "Variety",
       levels: { single: [9, 15, 17, 22, 24], double: [14, 17, 24, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Achluoias",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2401,7 +2169,6 @@ export const songs: Song[] = [
       artist: "Cranky",
       category: "Variety",
       levels: { single: [4, 7, 10, 18, 21], double: [7, 16, 19, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Matador",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2410,7 +2177,6 @@ export const songs: Song[] = [
       artist: "Zircon",
       category: "Variety",
       levels: { single: [6, 10, 17], double: [13, 18, 20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Baroque+Virus",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2419,7 +2185,6 @@ export const songs: Song[] = [
       artist: "SynthWulf",
       category: "Variety",
       levels: { single: [4, 7, 12, 17, 19], double: [15, 18, 22, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Passacaglia",
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
     {
@@ -2428,7 +2193,38 @@ export const songs: Song[] = [
       artist: "DM Ashura",
       category: "Variety",
       levels: { single: [5, 7, 10, 17, 22], double: [11, 19, 23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Allegro+Con+Fuoco",
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+    {
+      id: "var-31",
+      title: "Aleph-0",
+      artist: "LeaF & Optie",
+      category: "Variety",
+      levels: { single: [12, 20, 23], double: [16, 26] },
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+    {
+      id: "var-32",
+      title: "Assault TAXI",
+      artist: "LeaF & Optie",
+      category: "Variety",
+      levels: { single: [12, 15, 18, 21], double: [14, 20, 23] },
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+    {
+      id: "var-33",
+      title: "Save Yourself",
+      artist: "litmus* ft. Miori Celesta",
+      category: "Variety",
+      levels: { single: [11, 14, 17, 20, 22], double: [14, 18, 21, 24] },
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+    {
+      id: "var-34",
+      title: "Giselle",
+      artist: "Sobream a.k.a. WidowMaker",
+      category: "Variety",
+      levels: { single: [12, 16, 18, 20, 22], double: [14, 20, 22, 24] },
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
   
@@ -2439,7 +2235,6 @@ export const songs: Song[] = [
       artist: "Cashew",
       category: "Remix",
       levels: { single: [18, 21, 24], double: [23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=PIUniverse",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2448,7 +2243,6 @@ export const songs: Song[] = [
       artist: "Memme",
       category: "Remix",
       levels: { single: [15, 19, 23], double: [20, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Fire+Noodle",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2457,7 +2251,6 @@ export const songs: Song[] = [
       artist: "Paul Bazooka",
       category: "Remix",
       levels: { single: [18, 21], double: [18, 22] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Meteo5cience",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2466,7 +2259,6 @@ export const songs: Song[] = [
       artist: "DOIN & SUNNY",
       category: "Remix",
       levels: { single: [19, 23, 25], double: [24, 27] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=ERRORCODE",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2475,7 +2267,6 @@ export const songs: Song[] = [
       artist: "Applesoda & MAX",
       category: "Remix",
       levels: { single: [18, 20, 22], double: [20, 23, 25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Desaparecer",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2484,7 +2275,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Remix",
       levels: { single: [19, 21, 25], double: [21, 24, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Brown+Sky",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2493,7 +2283,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Remix",
       levels: { single: [18, 21, 24], double: [22, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Leather",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2502,7 +2291,6 @@ export const songs: Song[] = [
       artist: "Nato & EXC",
       category: "Remix",
       levels: { single: [25], double: [26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Shub+Sothoth",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2511,7 +2299,6 @@ export const songs: Song[] = [
       artist: "Memme",
       category: "Remix",
       levels: { single: [19, 22], double: [24] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Vulcan",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2520,7 +2307,6 @@ export const songs: Song[] = [
       artist: "SLAM & NATO",
       category: "Remix",
       levels: { single: [21, 23, 26], double: [25, 27] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=PARADOXX",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2529,7 +2315,6 @@ export const songs: Song[] = [
       artist: "MAX & MEMME",
       category: "Remix",
       levels: { single: [20, 23], double: [25] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Avalanquiem",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2538,7 +2323,6 @@ export const songs: Song[] = [
       artist: "Banya & Warak",
       category: "Remix",
       levels: { single: [18, 21], double: [20] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Influenza",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2547,7 +2331,6 @@ export const songs: Song[] = [
       artist: "Doin & MAX",
       category: "Remix",
       levels: { single: [18], double: [23] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=What+Are+You+Doin",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2556,7 +2339,6 @@ export const songs: Song[] = [
       artist: "MAX",
       category: "Remix",
       levels: { single: [21], double: [19] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Everybody+Know",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
     {
@@ -2565,7 +2347,6 @@ export const songs: Song[] = [
       artist: "Doin",
       category: "Remix",
       levels: { single: [16, 20, 25], double: [20, 26] },
-      bannerImage: "https://placehold.co/100/1a1a1a/FFF?text=Vacuum+Cleaner",
       categoryIcon: "https://placehold.co/50/red/FFF?text=Remix",
     },
 ];

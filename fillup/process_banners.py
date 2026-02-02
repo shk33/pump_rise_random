@@ -14,23 +14,34 @@ DESTINATION_FOLDERS = {
     'fie': 'assets/songs/fie',
     'fex': 'assets/songs/fex', # Assuming a separate folder for FIESTA EX if needed
     'fie2': 'assets/songs/fie2', # Assuming a separate folder for FIESTA 2 if needed
+    'pri': 'assets/songs/pri', # New folder for user's request
+    'pri2': 'assets/songs/pri2', # New folder for user's request
+    'xx': 'assets/songs/xx', # New folder for user's request
+    'var': 'assets/songs/var', # New folder for user's request
     # Add other categories as needed
 }
 
 # Helper function for consistent string cleaning (more refined)
 def clean_string_for_match(text: str) -> str:
+    print(f"DEBUG_CLEAN: Initial text: '{text}'")
     # Convert to lowercase
     cleaned = text.lower()
+    print(f"DEBUG_CLEAN: Lowercased: '{cleaned}'")
     # Remove text in parentheses (e.g., "Song Title (Mix)")
     cleaned = re.sub(r'\s*\(.*\)\s*', ' ', cleaned)
+    print(f"DEBUG_CLEAN: After removing parentheses: '{cleaned}'")
     # Remove text in brackets (e.g., "[Remix]")
     cleaned = re.sub(r'\s*\[.*?\]\s*', ' ', cleaned)
+    print(f"DEBUG_CLEAN: After removing brackets: '{cleaned}'")
     # Remove common extra words that don't help identification (e.g., "mix", "version")
     cleaned = re.sub(r'\b(mix|version|ver|edit|remix)\b', '', cleaned)
+    print(f"DEBUG_CLEAN: After removing common words: '{cleaned}'")
     # Remove any non-alphanumeric characters, but keep spaces
     cleaned = re.sub(r'[^a-z0-9\s]', '', cleaned)
+    print(f"DEBUG_CLEAN: After removing non-alphanumeric: '{cleaned}'")
     # Replace multiple spaces with a single space and strip leading/trailing spaces
     cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    print(f"DEBUG_CLEAN: Final cleaned: '{cleaned}'")
     return cleaned
 
 # Function to generate PNG file list (integrated from generate_png_list.py)
@@ -143,7 +154,8 @@ if __name__ == "__main__":
                 available_pngs_list.append({
                     'full_path': png_path,
                     'folder_title_raw': folder_title,
-                    'cleaned_title': clean_string_for_match(folder_title)
+                    'cleaned_title': clean_string_for_match(folder_title),
+                    'song_number_in_folder': song_number_in_folder # Add this line
                 })
 
     print(f"DEBUG: available_pngs_list populated: {len(available_pngs_list)} entries.")
@@ -172,15 +184,33 @@ if __name__ == "__main__":
 
         potential_matches = []
         
+        # Prepare song_match_id (numerical part of the song ID if prefixed by dest_short_name)
+        song_match_id_numeric = None
+        if song['id'].startswith(dest_short_name + '-'):
+            song_match_id_numeric = song['id'][len(dest_short_name) + 1:]
+
         # Get the longest word from the song's cleaned title
         song_longest_word = max(song['cleaned_title'].split(), key=len, default='')
+        print(f"DEBUG_MATCH:   Calculated song_longest_word: '{song_longest_word}'")
         if not song_longest_word: # Skip if no words
             print(f"NO MATCH: No processable words in song title: '{song['title']}' (Cleaned: '{song['cleaned_title']}')")
             continue
 
-        # Find all available PNGs whose cleaned title contains the song's longest word
+        print(f"\nDEBUG_MATCH: Processing song: ID='{song['id']}', Title='{song['title']}', Cleaned='{song['cleaned_title']}', LongestWord='{song_longest_word}'")
+        print(f"DEBUG_MATCH: song_match_id_numeric='{song_match_id_numeric}'")
+
+
+        # Find all available PNGs whose cleaned title contains the song's longest word OR whose numerical ID matches
         for png_info in available_pngs_list:
-            if song_longest_word in png_info['cleaned_title']:
+            match_by_longest_word = (song_longest_word in png_info['cleaned_title'])
+            print(f"DEBUG_REPR:   repr(song_longest_word): {repr(song_longest_word)}")
+            print(f"DEBUG_REPR:   repr(png_info['cleaned_title']): {repr(png_info['cleaned_title'])}")
+            match_by_numeric_id = (song_match_id_numeric and song_match_id_numeric == png_info['song_number_in_folder'])
+            
+            print(f"DEBUG_MATCH:   Checking PNG: Folder='{png_info['folder_title_raw']}', Cleaned='{png_info['cleaned_title']}', NumericID='{png_info['song_number_in_folder']}'")
+            print(f"DEBUG_MATCH:     Condition: (LongestWord in CleanedTitle) {match_by_longest_word} || (NumericID match) {match_by_numeric_id}")
+
+            if match_by_longest_word or match_by_numeric_id:
                 potential_matches.append(png_info)
         
         selected_match_info = None

@@ -1,12 +1,14 @@
 import React from 'react';
 import {
+  Image,
   Modal,
   SectionList,
-  View,
+  TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components/native';
-import { generateFullSession, PickedSong } from '../utils/generator'; // Import PickedSong
-import { Song } from '../data/data';
+import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '../utils/generator';
+import { getBannerImage } from '../utils/imageLoader';
+import { FontAwesome } from '@expo/vector-icons';
 
 const ModalContainer = styled.View`
   flex: 1;
@@ -22,6 +24,13 @@ const ModalContent = styled.View`
   padding: 20px;
 `;
 
+const Header = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
 const SectionHeader = styled.Text`
   font-size: 16px;
   color: gray;
@@ -34,12 +43,6 @@ const ItemContainer = styled.View`
   padding-vertical: 10px;
   border-bottom-width: 1px;
   border-bottom-color: #333;
-`;
-
-const BannerPlaceholder = styled.View`
-  width: 80px;
-  height: 64px;
-  background-color: #333;
 `;
 
 const TextContainer = styled.View`
@@ -67,7 +70,6 @@ const CategoryText = styled.Text`
 const IconPlaceholder = styled.View`
   width: 48px;
   height: 48px;
-  background-color: #550055;
 `;
 
 const Separator = styled.View`
@@ -77,13 +79,12 @@ const Separator = styled.View`
 
 
 interface ListItemProps {
-  item: PickedSong; // Use PickedSong
+  item: PickedSong;
 }
 
 const ListItem: React.FC<ListItemProps> = ({ item }) => (
   <ItemContainer>
-    {/* <Image source={{ uri: item.bannerImage }} style={{ width: 80, height: 64, resizeMode: 'contain' }} /> */}
-    <BannerPlaceholder />
+    <Image source={getBannerImage(item.id)} style={{ width: 80, height: 64, resizeMode: 'contain' }} />
     <TextContainer>
       <TitleText>{item.title}</TitleText>
       <SubtitleText>
@@ -92,7 +93,6 @@ const ListItem: React.FC<ListItemProps> = ({ item }) => (
       <CategoryText>Canal: {item.category}</CategoryText>
     </TextContainer>
     <IconPlaceholder />
-    {/* <Image source={{ uri: item.categoryIcon }} style={{ width: 48, height: 48, resizeMode: 'contain' }} /> */}
   </ItemContainer>
 );
 
@@ -102,31 +102,42 @@ interface ResultsModalProps {
   leagueId: string;
 }
 
-const DoublesStartDividerContainer = styled.View`
-  background-color: #333;
-  padding-vertical: 10px;
-  align-items: center;
-  margin-vertical: 10px;
+type ResultSection = {
+  title: string;
+  data: PickedSong[];
+};
+
+const ListDivider = styled.View`
+  background-color: darkgreen;
+  height: 2px;
+  margin-vertical: 20px;
 `;
 
-const DoublesStartDividerText = styled.Text`
+
+const ModalTitle = styled.Text`
   color: white;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 `;
 
-const DoublesStartDivider = () => (
-  <DoublesStartDividerContainer>
-    <DoublesStartDividerText>--- DOUBLES START ---</DoublesStartDividerText>
-  </DoublesStartDividerContainer>
-);
 
 const ResultsModal: React.FC<ResultsModalProps> = ({
   visible,
   onClose,
   leagueId,
 }) => {
-  const sections = generateFullSession(leagueId);
+  const { singleSections, doubleSections } = generateFullSession(leagueId);
+
+  const sections: ResultSection[] = [
+    ...singleSections,
+  ];
+
+  if (doubleSections.length > 0) {
+    sections.push({ title: 'DOUBLES_DIVIDER', data: [] }); // Special divider section
+    sections.push(...doubleSections);
+  }
 
   return (
     <Modal
@@ -137,19 +148,26 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
     >
       <ModalContainer>
         <ModalContent>
+          <Header>
+            <ModalTitle>{LEAGUE_DISPLAY_NAMES[leagueId] || `${leagueId.toUpperCase()} League`}</ModalTitle>
+            <TouchableOpacity onPress={onClose}>
+              <FontAwesome name="close" size={24} color="white" />
+            </TouchableOpacity>
+          </Header>
+
           <SectionList
-            sections={sections}
+            sections={sections} // Use the combined sections with level grouping
             keyExtractor={(item) => item.id + item.selectedType + item.selectedLevel}
-            renderItem={({ item, section }) => {
-              if (section.title === '--- DOUBLES START ---') {
-                return <DoublesStartDivider />;
-              }
-              return <ListItem item={item} />;
-            }}
+            renderItem={({ item }) => <ListItem item={item} />}
             renderSectionHeader={({ section: { title } }) => {
-              if (title === '--- DOUBLES START ---') {
-                return null; // Hide the default header for the divider section
+              if (title === 'DOUBLES_DIVIDER') {
+                return (
+                  <>
+                    <ListDivider />
+                  </>
+                );
               }
+              // This will now correctly render "Single X" and "Double Y" headers
               return <SectionHeader>{title}</SectionHeader>;
             }}
             ItemSeparatorComponent={() => <Separator />}
@@ -159,5 +177,6 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
     </Modal>
   );
 };
+
 
 export default ResultsModal;
