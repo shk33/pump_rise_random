@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'pump_rise_fresh'
+rootProject.name = 'pump_rise_random'
 
 dependencyResolutionManagement {
   versionCatalogs {

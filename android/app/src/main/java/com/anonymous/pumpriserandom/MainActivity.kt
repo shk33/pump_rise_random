@@ -1,4 +1,4 @@
-package com.anonymous.pump_rise_fresh
+package com.anonymous.pumpriserandom
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

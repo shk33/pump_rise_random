@@ -1,4 +1,4 @@
-package com.anonymous.pump_rise_fresh
+package com.anonymous.pumpriserandom
 
 import android.app.Application
 import android.content.res.Configuration

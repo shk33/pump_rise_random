@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.pump_rise_fresh'
+    namespace 'com.anonymous.pumpriserandom'
     defaultConfig {
-        applicationId 'com.anonymous.pump_rise_fresh'
+        applicationId 'com.anonymous.pumpriserandom'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
