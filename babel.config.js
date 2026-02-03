@@ -3,13 +3,18 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      ["module-resolver", {
-        "alias": {
-          "@": "./"
-        }
-      }],
-      "@babel/plugin-proposal-export-namespace-from",
-      "react-native-reanimated/plugin"
+      // Required for Reanimated
+      'react-native-reanimated/plugin',
+      // Required for your module resolver usage
+      [
+        'module-resolver',
+        {
+          root: ['./'],
+          alias: {
+            "@": "./"
+          },
+        },
+      ],
     ],
   };
 };
