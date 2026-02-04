@@ -107,6 +107,23 @@ const BottomCloseButtonText = styled.Text`
   font-weight: bold;
 `;
 
+const InfoTextBox = styled.View`
+  background-color: #282828;
+  padding: 15px;
+  border-radius: 10px;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
+const InfoText = styled.Text`
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  flex-shrink: 1;
+`;
+
+
 const SongDetailScreen = () => {
   const { songId } = useLocalSearchParams();
   const router = useRouter();
@@ -148,6 +165,11 @@ const SongDetailScreen = () => {
           <Artist>{song.artist}</Artist>
           <Channel>Channel: {song.category}</Channel>
         </HeaderContainer>
+
+        <InfoTextBox>
+          <FontAwesome5 name="youtube" size={20} color="#FF0000" />
+          <InfoText>Select any level to watch it on YouTube.</InfoText>
+        </InfoTextBox>
 
         {song.levels.single.length > 0 && (
           <LevelsContainer>
