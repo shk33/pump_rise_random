@@ -2,9 +2,9 @@ import React from 'react';
 import {
   Image,
   View,
-  Linking,
   TouchableOpacity,
 } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 import styled from 'styled-components/native';
 import { PickedSong } from '@/utils/generator';
 import { getBannerImage } from '@/utils/imageLoader';
@@ -59,12 +59,7 @@ const ListItem: React.FC<ListItemProps> = ({ item }) => {
     const searchQuery = `${item.title} ${chartPrefix}${item.selectedLevel}`;
     const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
 
-    const supported = await Linking.canOpenURL(youtubeUrl);
-    if (supported) {
-      await Linking.openURL(youtubeUrl);
-    } else {
-      console.error(`Don't know how to open this URL: ${youtubeUrl}`);
-    }
+    await WebBrowser.openBrowserAsync(youtubeUrl);
   };
 
   return (

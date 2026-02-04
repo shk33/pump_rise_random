@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, Linking, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { songs, Song } from '@/data/data';
 import styled from 'styled-components/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getBannerImage } from '@/utils/imageLoader';
+import * as WebBrowser from 'expo-web-browser';
 
 const MainContainer = styled.View`
   flex: 1;
@@ -144,13 +145,7 @@ const SongDetailScreen = () => {
     const searchQuery = `${song.title} ${chartPrefix}${level}`;
     const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
 
-    const supported = await Linking.canOpenURL(youtubeUrl);
-    if (supported) {
-      await Linking.openURL(youtubeUrl);
-    } else {
-      console.error(`Don't know how to open this URL: ${youtubeUrl}`);
-      // Optionally, show an alert to the user
-    }
+    await WebBrowser.openBrowserAsync(youtubeUrl);
   };
 
   return (
