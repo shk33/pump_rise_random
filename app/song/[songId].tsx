@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
+import { View, Text, ScrollView, Image, Linking, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { songs, Song } from '@/data/data';
 import styled from 'styled-components/native';
@@ -71,7 +71,7 @@ const LevelRow = styled.View`
   flex-wrap: wrap;
 `;
 
-const LevelBadge = styled.View<LevelBadgeProps>`
+const TappableLevelBadge = styled(TouchableOpacity)<LevelBadgeProps>`
   background-color: ${(props) => (props.chartType === 'single' ? '#e74c3c' : '#2ecc71')};
   border-radius: 5px;
   padding: 8px 12px;
@@ -122,6 +122,20 @@ const SongDetailScreen = () => {
 
   const songImageSource = getBannerImage(song.id);
 
+  const handleLevelTap = async (chartType: 'single' | 'double', level: number) => {
+    const chartPrefix = chartType === 'single' ? 'S' : 'D';
+    const searchQuery = `${song.title} ${chartPrefix}${level}`;
+    const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
+
+    const supported = await Linking.canOpenURL(youtubeUrl);
+    if (supported) {
+      await Linking.openURL(youtubeUrl);
+    } else {
+      console.error(`Don't know how to open this URL: ${youtubeUrl}`);
+      // Optionally, show an alert to the user
+    }
+  };
+
   return (
     <MainContainer>
       <TopRightCloseButton onPress={() => router.back()}>
@@ -140,9 +154,13 @@ const SongDetailScreen = () => {
             <LevelTypeTitle>Singles</LevelTypeTitle>
             <LevelRow>
               {song.levels.single.map((level, index) => (
-                <LevelBadge key={`single-${index}`} chartType="single">
+                <TappableLevelBadge
+                  key={`single-${index}`}
+                  chartType="single"
+                  onPress={() => handleLevelTap('single', level)}
+                >
                   <LevelText>S{level}</LevelText>
-                </LevelBadge>
+                </TappableLevelBadge>
               ))}
             </LevelRow>
           </LevelsContainer>
@@ -153,9 +171,13 @@ const SongDetailScreen = () => {
             <LevelTypeTitle>Doubles</LevelTypeTitle>
             <LevelRow>
               {song.levels.double.map((level, index) => (
-                <LevelBadge key={`double-${index}`} chartType="double">
+                <TappableLevelBadge
+                  key={`double-${index}`}
+                  chartType="double"
+                  onPress={() => handleLevelTap('double', level)}
+                >
                   <LevelText>D{level}</LevelText>
-                </LevelBadge>
+                </TappableLevelBadge>
               ))}
             </LevelRow>
           </LevelsContainer>
@@ -167,8 +189,5 @@ const SongDetailScreen = () => {
     </MainContainer>
   );
 };
-
-export default SongDetailScreen;
-
 
 export default SongDetailScreen;
