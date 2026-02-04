@@ -46,15 +46,26 @@ export default function Layout() {
   return <RootLayoutNav />;
 }
 
+const CustomDarkTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    card: '#000',
+    background: '#000',
+  },
+};
+
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
     <PaperProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <ThemeProvider value={CustomDarkTheme}>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="SearchScreen" options={{ title: 'Search Songs' }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="song/[songId]" options={{ presentation: 'modal', headerShown: false }} />
         </Stack>
       </ThemeProvider>
     </PaperProvider>

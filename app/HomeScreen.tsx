@@ -3,8 +3,9 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
-import LeagueSelectorList from '../components/LeagueSelectorList';
-import ResultsModal from '../components/ResultsModal';
+import LeagueSelectorList from '@/components/LeagueSelectorList';
+import ResultsModal from '@/components/ResultsModal';
+import { useRouter } from 'expo-router';
 
 const BackgroundImage = require('../assets/backgrounds/pump_logo.png');
 
@@ -22,12 +23,18 @@ const HeaderContainer = styled.View`
   justify-content: center;
   align-items: center;
   border-bottom-width: 1px; /* Add a bottom border */
+  flex-direction: row;
 `;
 
 const HeaderTitle = styled.Text`
   color: white;
   font-size: 24px; /* Slightly larger font */
   font-weight: bold; /* Make it bold */
+`;
+
+const SearchIconContainer = styled.TouchableOpacity`
+  position: absolute;
+  right: 20px;
 `;
 
 const MainContent = styled.View`
@@ -95,6 +102,7 @@ const DotBar = () => (
 export default function HomeScreen() {
   const [resultsModalVisible, setResultsModalVisible] = useState(false);
   const [selectedLeagueId, setSelectedLeagueId] = useState('');
+  const router = useRouter();
 
   const handleSelectLeague = (leagueId: string) => {
     setSelectedLeagueId(leagueId);
@@ -107,6 +115,9 @@ export default function HomeScreen() {
         <HeaderTitle>
           PIU: Rise - Random
         </HeaderTitle>
+        <SearchIconContainer onPress={() => router.push('/SearchScreen')}>
+          <FontAwesome5 name="search" size={24} color="white" />
+        </SearchIconContainer>
       </HeaderContainer>
 
       <MainContent>

@@ -1,4 +1,4 @@
-import { songs, Song } from '../data/data';
+import { songs, Song } from '@/data/data';
 
 type LeagueRule = {
   count: number;

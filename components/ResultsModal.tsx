@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components/native';
-import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '../utils/generator';
-import { getBannerImage } from '../utils/imageLoader';
+import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '@/utils/generator';
+import { getBannerImage } from '@/utils/imageLoader';
 import { FontAwesome } from '@expo/vector-icons';
 
 const ModalContainer = styled.View`

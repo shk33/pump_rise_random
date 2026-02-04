@@ -24,7 +24,7 @@ imageContext.keys().forEach((key: string) => {
 });
 
 // Fallback image in case a banner image is not found
-const defaultBanner = require('../assets/images/adaptive-icon.png');
+const defaultBanner = require('@/assets/images/adaptive-icon.png');
 
 export const getBannerImage = (songId: string): ImageSourcePropType => {
   return imageMap[songId] || defaultBanner;
