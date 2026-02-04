@@ -4,6 +4,7 @@
 node_modules/
 
 png_files.txt
+plan.md
 
 # Expo
 .expo/
@@ -39,5 +40,3 @@ yarn-error.*
 
 #apk
 *.apk
-
-plan.md
