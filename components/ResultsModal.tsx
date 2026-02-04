@@ -11,13 +11,22 @@ import styled from 'styled-components/native';
 import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '@/utils/generator';
 import { getBannerImage } from '@/utils/imageLoader';
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { LEAGUE_COLORS } from '@/constants/LeagueColors';
 
 
 
-const Header = styled.View`
+const Header = styled(LinearGradient).attrs({
+  start: { x: 0, y: 0.5 },
+  end: { x: 1, y: 0.5 },
+})`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 90px;
+  padding-horizontal: 15px;
 `;
 
 const SectionHeader = styled.Text`
@@ -54,11 +63,6 @@ const SubtitleText = styled.Text`
 const CategoryText = styled.Text`
   color: gray;
   font-size: 12px;
-`;
-
-const IconPlaceholder = styled.View`
-  width: 48px;
-  height: 48px;
 `;
 
 const CheckboxContainer = styled.View`
@@ -120,13 +124,11 @@ const ListDivider = styled.View`
   margin-vertical: 20px;
 `;
 
-
 const ModalTitle = styled.Text`
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
 `;
 
 
@@ -136,6 +138,7 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
   leagueId,
 }) => {
   const { singleSections, doubleSections } = generateFullSession(leagueId);
+  const headerColors = LEAGUE_COLORS[leagueId] || LEAGUE_COLORS['D'];
 
   const sections: ResultSection[] = [
     ...singleSections,
@@ -153,17 +156,15 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
         onDismiss={onClose}
         contentContainerStyle={{
           backgroundColor: '#1a1a1a',
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
           height: '80%',
-          padding: 20,
+          paddingBottom: 20,
           justifyContent: 'flex-end',
           marginHorizontal: 0,
           marginBottom: 0,
           marginTop: 'auto',
         }}
       >
-        <Header>
+        <Header colors={headerColors}>
           <ModalTitle>{LEAGUE_DISPLAY_NAMES[leagueId] || `${leagueId.toUpperCase()} League`}</ModalTitle>
           <TouchableOpacity onPress={onClose}>
             <FontAwesome name="close" size={24} color="white" />
@@ -190,6 +191,7 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
               return <SectionHeader>{title}</SectionHeader>;
             }}
             ItemSeparatorComponent={() => <Separator />}
+            contentContainerStyle={{ padding: 15 }}
           />
         </ImageBackground>
       </Modal>

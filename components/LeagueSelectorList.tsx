@@ -1,6 +1,7 @@
 import { View, TouchableOpacity, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
+import { LEAGUE_COLORS } from '@/constants/LeagueColors';
 
 interface LeagueSelectorListProps {
   onSelectLeague: (leagueId: string) => void;
@@ -72,32 +73,32 @@ export default function LeagueSelectorList({ onSelectLeague }: LeagueSelectorLis
       </BodyText>
 
       <LeagueButton
-        colors={['#ff416c', '#ff4b2b']}
+        colors={LEAGUE_COLORS['SSS']}
         text="League - SSS"
         onPress={() => handleSelectLeague('SSS')}
       />
       <LeagueButton
-        colors={['#ff9966', '#ff5e62']}
+        colors={LEAGUE_COLORS['S']}
         text="League - S"
         onPress={() => handleSelectLeague('S')}
       />
       <LeagueButton
-        colors={['#f7971e', '#ffd200']}
+        colors={LEAGUE_COLORS['A']}
         text="League - A"
         onPress={() => handleSelectLeague('A')}
       />
       <LeagueButton
-        colors={['#cddc39', '#ffeb3b']}
+        colors={LEAGUE_COLORS['B']}
         text="League - B"
         onPress={() => handleSelectLeague('B')}
       />
       <LeagueButton
-        colors={['#a8ff78', '#78ffd6']}
+        colors={LEAGUE_COLORS['C']}
         text="League - C"
         onPress={() => handleSelectLeague('C')}
       />
       <LeagueButton
-        colors={['#2193b0', '#6dd5ed']}
+        colors={LEAGUE_COLORS['D']}
         text="League - D"
         onPress={() => handleSelectLeague('D')}
       />
