@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Pump Rise: Random",
-    "slug": "pump_rise_random",
+    "slug": "piu-rise-random",
     "scheme": "pumpriserandom",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -39,6 +39,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f54ef0cf-f5d8-4aef-b45a-fc3b0736803f"
+      }
+    },
+    "owner": "coronels-organization"
   }
 }
