@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Image,
   ImageBackground,
   SectionList,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Checkbox, Modal, Portal } from 'react-native-paper';
+import { Modal, Portal } from 'react-native-paper';
 import styled from 'styled-components/native';
-import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '@/utils/generator';
-import { getBannerImage } from '@/utils/imageLoader';
+import { generateFullSession, LEAGUE_DISPLAY_NAMES } from '@/utils/generator';
 import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { LEAGUE_COLORS } from '@/constants/LeagueColors';
+import ListItem from '@/components/ListItem';
 
 
 
@@ -35,42 +34,17 @@ const SectionHeader = styled.Text`
   padding-vertical: 10px;
 `;
 
-const ItemContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  padding-vertical: 10px;
-  border-bottom-width: 1px;
-  border-bottom-color: #333;
-`;
 
-const TextContainer = styled.View`
-  flex: 1;
-  margin-left: 16px;
-`;
 
-const TitleText = styled.Text`
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-`;
 
-const SubtitleText = styled.Text`
-  color: #ccc;
-  font-size: 14px;
-  text-transform: uppercase;
-`;
 
-const CategoryText = styled.Text`
-  color: gray;
-  font-size: 12px;
-`;
 
-const CheckboxContainer = styled.View`
-  width: 48px;
-  height: 48px;
-  justify-content: center;
-  align-items: center;
-`;
+
+
+
+
+
+
 
 const Separator = styled.View`
   height: 1px;
@@ -78,34 +52,7 @@ const Separator = styled.View`
 `;
 
 
-interface ListItemProps {
-  item: PickedSong;
-}
 
-const ListItem: React.FC<ListItemProps> = ({ item }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  return (
-    <ItemContainer>
-      <Image source={getBannerImage(item.id)} style={{ width: 80, height: 64, resizeMode: 'contain' }} />
-      <TextContainer>
-        <TitleText>{item.title}</TitleText>
-        <SubtitleText>
-          {item.selectedType.toUpperCase()}: {item.selectedLevel}
-        </SubtitleText>
-        <CategoryText>Canal: {item.category}</CategoryText>
-      </TextContainer>
-      <View>
-        <CheckboxContainer>
-          <Checkbox
-            status={isChecked ? 'checked' : 'unchecked'}
-            onPress={() => setIsChecked(!isChecked)}
-          />
-        </CheckboxContainer>
-      </View>
-    </ItemContainer>
-  );
-};
 
 interface ResultsModalProps {
   visible: boolean;
