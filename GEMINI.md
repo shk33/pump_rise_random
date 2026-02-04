@@ -48,3 +48,8 @@ The "Pump Rise: Random" application is built using the following technologies:
 ## Import Aliases
 
 This project utilizes import aliases to simplify module imports and maintain a cleaner codebase. The `@` symbol is configured as an alias for the project's root directory. This means that instead of using relative paths like `../data/data`, you can use absolute paths like `@/data/data`. This convention helps in avoiding broken imports when files are moved and improves readability.
+
+## Agent Learned Information
+
+- The command to trigger a new build for Android production using EAS, without releasing it, is: `eas build --platform android --profile production --no-submit`
+- Write code with as few comments as possible.

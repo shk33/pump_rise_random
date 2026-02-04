@@ -50,6 +50,14 @@ The application features a clean, intuitive interface that allows users to quick
     npm run ios
     ```
 
+## Building for Android
+
+To trigger a new build for Android production using EAS, without releasing it:
+
+```bash
+eas build --platform android --profile production --no-submit
+```
+
 ## Technical Overview
 
 ### Technologies Used
