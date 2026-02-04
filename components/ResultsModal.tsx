@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   Modal,
   SectionList,
   TouchableOpacity,
+  View,
 } from 'react-native';
+import { Checkbox } from 'react-native-paper';
 import styled from 'styled-components/native';
 import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '@/utils/generator';
 import { getBannerImage } from '@/utils/imageLoader';
@@ -72,6 +74,13 @@ const IconPlaceholder = styled.View`
   height: 48px;
 `;
 
+const CheckboxContainer = styled.View`
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Separator = styled.View`
   height: 1px;
   background-color: #333;
@@ -82,19 +91,30 @@ interface ListItemProps {
   item: PickedSong;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ item }) => (
-  <ItemContainer>
-    <Image source={getBannerImage(item.id)} style={{ width: 80, height: 64, resizeMode: 'contain' }} />
-    <TextContainer>
-      <TitleText>{item.title}</TitleText>
-      <SubtitleText>
-        {item.selectedType.toUpperCase()}: {item.selectedLevel}
-      </SubtitleText>
-      <CategoryText>Canal: {item.category}</CategoryText>
-    </TextContainer>
-    <IconPlaceholder />
-  </ItemContainer>
-);
+const ListItem: React.FC<ListItemProps> = ({ item }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  return (
+    <ItemContainer>
+      <Image source={getBannerImage(item.id)} style={{ width: 80, height: 64, resizeMode: 'contain' }} />
+      <TextContainer>
+        <TitleText>{item.title}</TitleText>
+        <SubtitleText>
+          {item.selectedType.toUpperCase()}: {item.selectedLevel}
+        </SubtitleText>
+        <CategoryText>Canal: {item.category}</CategoryText>
+      </TextContainer>
+      <View>
+        <CheckboxContainer>
+          <Checkbox
+            status={isChecked ? 'checked' : 'unchecked'}
+            onPress={() => setIsChecked(!isChecked)}
+          />
+        </CheckboxContainer>
+      </View>
+    </ItemContainer>
+  );
+};
 
 interface ResultsModalProps {
   visible: boolean;
