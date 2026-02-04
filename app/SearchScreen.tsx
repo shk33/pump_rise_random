@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { View, TextInput, FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { FlatList, ImageBackground } from 'react-native';
 import { songs, Song } from '@/data/data';
 import { useRouter } from 'expo-router';
 import styled from 'styled-components/native';
 
-const Container = styled.View`
+const Container = styled(ImageBackground).attrs({
+  source: require('@/assets/backgrounds/we_love_your_step1.png'),
+  imageStyle: { opacity: 0.1, resizeMode: 'cover' },
+})`
   flex: 1;
   background-color: #000;
   padding: 20px;

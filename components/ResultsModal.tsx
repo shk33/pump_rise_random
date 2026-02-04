@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   Image,
+  ImageBackground,
   SectionList,
   TouchableOpacity,
   View,
@@ -169,22 +170,28 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
           </TouchableOpacity>
         </Header>
 
-        <SectionList
-          sections={sections}
-          keyExtractor={(item) => item.id + item.selectedType + item.selectedLevel}
-          renderItem={({ item }) => <ListItem item={item} />}
-          renderSectionHeader={({ section: { title } }) => {
-            if (title === 'DOUBLES_DIVIDER') {
-              return (
-                <>
-                  <ListDivider />
-                </>
-              );
-            }
-            return <SectionHeader>{title}</SectionHeader>;
-          }}
-          ItemSeparatorComponent={() => <Separator />}
-        />
+        <ImageBackground
+          source={require('@/assets/backgrounds/we_love_your_step1.png')}
+          style={{ flex: 1 }}
+          imageStyle={{ opacity: 0.06, resizeMode: 'cover' }}
+        >
+          <SectionList
+            sections={sections}
+            keyExtractor={(item) => item.id + item.selectedType + item.selectedLevel}
+            renderItem={({ item }) => <ListItem item={item} />}
+            renderSectionHeader={({ section: { title } }) => {
+              if (title === 'DOUBLES_DIVIDER') {
+                return (
+                  <>
+                    <ListDivider />
+                  </>
+                );
+              }
+              return <SectionHeader>{title}</SectionHeader>;
+            }}
+            ItemSeparatorComponent={() => <Separator />}
+          />
+        </ImageBackground>
       </Modal>
     </Portal>
   );
