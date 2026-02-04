@@ -1,36 +1,22 @@
 import React, { useState } from 'react';
 import {
   Image,
-  Modal,
   SectionList,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Checkbox } from 'react-native-paper';
+import { Checkbox, Modal, Portal } from 'react-native-paper';
 import styled from 'styled-components/native';
 import { generateFullSession, PickedSong, LEAGUE_DISPLAY_NAMES } from '@/utils/generator';
 import { getBannerImage } from '@/utils/imageLoader';
 import { FontAwesome } from '@expo/vector-icons';
 
-const ModalContainer = styled.View`
-  flex: 1;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: flex-end;
-`;
 
-const ModalContent = styled.View`
-  background-color: #1a1a1a;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  height: 80%;
-  padding: 20px;
-`;
 
 const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 `;
 
 const SectionHeader = styled.Text`
@@ -155,46 +141,52 @@ const ResultsModal: React.FC<ResultsModalProps> = ({
   ];
 
   if (doubleSections.length > 0) {
-    sections.push({ title: 'DOUBLES_DIVIDER', data: [] }); // Special divider section
+    sections.push({ title: 'DOUBLES_DIVIDER', data: [] });
     sections.push(...doubleSections);
   }
 
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={visible}
-      onRequestClose={onClose}
-    >
-      <ModalContainer>
-        <ModalContent>
-          <Header>
-            <ModalTitle>{LEAGUE_DISPLAY_NAMES[leagueId] || `${leagueId.toUpperCase()} League`}</ModalTitle>
-            <TouchableOpacity onPress={onClose}>
-              <FontAwesome name="close" size={24} color="white" />
-            </TouchableOpacity>
-          </Header>
+    <Portal>
+      <Modal
+        visible={visible}
+        onDismiss={onClose}
+        contentContainerStyle={{
+          backgroundColor: '#1a1a1a',
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          height: '80%',
+          padding: 20,
+          justifyContent: 'flex-end',
+          marginHorizontal: 0,
+          marginBottom: 0,
+          marginTop: 'auto',
+        }}
+      >
+        <Header>
+          <ModalTitle>{LEAGUE_DISPLAY_NAMES[leagueId] || `${leagueId.toUpperCase()} League`}</ModalTitle>
+          <TouchableOpacity onPress={onClose}>
+            <FontAwesome name="close" size={24} color="white" />
+          </TouchableOpacity>
+        </Header>
 
-          <SectionList
-            sections={sections} // Use the combined sections with level grouping
-            keyExtractor={(item) => item.id + item.selectedType + item.selectedLevel}
-            renderItem={({ item }) => <ListItem item={item} />}
-            renderSectionHeader={({ section: { title } }) => {
-              if (title === 'DOUBLES_DIVIDER') {
-                return (
-                  <>
-                    <ListDivider />
-                  </>
-                );
-              }
-              // This will now correctly render "Single X" and "Double Y" headers
-              return <SectionHeader>{title}</SectionHeader>;
-            }}
-            ItemSeparatorComponent={() => <Separator />}
-          />
-        </ModalContent>
-      </ModalContainer>
-    </Modal>
+        <SectionList
+          sections={sections}
+          keyExtractor={(item) => item.id + item.selectedType + item.selectedLevel}
+          renderItem={({ item }) => <ListItem item={item} />}
+          renderSectionHeader={({ section: { title } }) => {
+            if (title === 'DOUBLES_DIVIDER') {
+              return (
+                <>
+                  <ListDivider />
+                </>
+              );
+            }
+            return <SectionHeader>{title}</SectionHeader>;
+          }}
+          ItemSeparatorComponent={() => <Separator />}
+        />
+      </Modal>
+    </Portal>
   );
 };
 
