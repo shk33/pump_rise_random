@@ -208,6 +208,14 @@ export const songs: Song[] = [
       levels: { single: [2, 4, 7, 11, 15, 18], double: [5, 13, 16, 19] },
       categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
     },
+    {
+      id: "rise-25",
+      title: "The deconstruction",
+      artist: "Hommarju",
+      category: "Rise",
+      levels: { single: [12, 17, 19, 22 ], double: [16, 19, 23] },
+      categoryIcon: "https://placehold.co/50/purple/FFF?text=Rise",
+    },
     // Legacy Category Songs
     {
       id: "leg-1",
@@ -2227,7 +2235,31 @@ export const songs: Song[] = [
       levels: { single: [12, 16, 18, 20, 22], double: [14, 20, 22, 24] },
       categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
     },
-  
+    {
+      id: "var-35",
+      title: "Conflict -NOMA CONCEIVER REMIX-",
+      artist: "NOMA",
+      category: "Variety",
+      levels: { single: [7, 11, 16, 18, 22], double: [13, 19, 23] },
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+    {
+      id: "var-36",
+      title: "L (PIU Edit)",
+      artist: "ICE",
+      category: "Variety",
+      levels: { single: [10, 17, 21, 24], double: [19, 23, 26] },
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+    {
+      id: "var-37",
+      title: "MilK",
+      artist: "Morimori Atsushi",
+      category: "Variety",
+      levels: { single: [7, 11, 15, 17, 20], double: [11, 16, 19, 22] },
+      categoryIcon: "https://placehold.co/50/pink/FFF?text=Variety",
+    },
+
     // --- Category: Remix ---
     {
       id: "rem-1",
