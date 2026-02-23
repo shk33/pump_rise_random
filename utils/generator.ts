@@ -29,9 +29,9 @@ export const LEAGUE_DISPLAY_NAMES: Record<string, string> = {
 const LEAGUES: Record<string, League> = {
   SSS: {
     singles: [
-      { count: 3, level: 22 },
+      { count: 2, level: 22 },
       { count: 3, level: 23 },
-      { count: 2, level: 24, levelSelector: 'higher' },
+      { count: 3, level: 24, levelSelector: 'higher' },
     ],
     doubles: [
       { count: 1, level: 22 },
@@ -43,18 +43,17 @@ const LEAGUES: Record<string, League> = {
   },
   S: {
     singles: [
-      { count: 1, level: 20 },
-      { count: 2, level: 21 },
-      { count: 2, level: 22 },
-      { count: 2, level: 23 },
+      { count: 1, level: 21 },
+      { count: 3, level: 22 },
+      { count: 3, level: 23 },
       { count: 1, level: 24 },
     ],
     doubles: [
-      { count: 2, level: 21 },
       { count: 2, level: 22 },
       { count: 1, level: 23 },
-      { count: 1, level: 24 },
-      { count: 1, level: 25 },
+      { count: 2, level: 24 },
+      { count: 2, level: 25 },
+      { count: 1, level: 26, levelSelector: 'higher' },
     ],
   },
   A: {

@@ -1,6 +1,3 @@
-import { ImageSourcePropType } from "react-native";
-
-// 1. New Interface Definition
 export interface Song {
   id: string;
   title: string;
