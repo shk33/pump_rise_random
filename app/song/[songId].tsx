@@ -158,7 +158,7 @@ const SongDetailScreen = () => {
           {songImageSource && <SongBanner source={songImageSource} />}
           <Title>{song.title}</Title>
           <Artist>{song.artist}</Artist>
-          <Channel>Channel: {song.category}</Channel>
+          <Channel>Channel: {song.version}</Channel>
         </HeaderContainer>
 
         <InfoTextBox>

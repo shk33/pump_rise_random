@@ -70,7 +70,7 @@ const ListItem: React.FC<ListItemProps> = ({ item }) => {
         <SubtitleText>
           {item.selectedType.toUpperCase()}: {item.selectedLevel}
         </SubtitleText>
-        <CategoryText>Canal: {item.category}</CategoryText>
+        <CategoryText>Canal: {item.version}</CategoryText>
       </TextContainer>
       <View>
         <CheckboxContainer as={TouchableOpacity} onPress={handleYouTubeSearch}>
