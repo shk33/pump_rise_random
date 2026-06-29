@@ -13,8 +13,8 @@ module.exports = function (api) {
           },
         },
       ],
-      // Required for Reanimated
-      'react-native-reanimated/plugin',
+      // Required for Reanimated (v4 moved the plugin into react-native-worklets)
+      'react-native-worklets/plugin',
     ],
   };
 };
