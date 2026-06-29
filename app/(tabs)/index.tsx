@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
 import LeagueSelectorList from '@/components/LeagueSelectorList';
 import ResultsModal from '@/components/ResultsModal';
-import { useRouter } from 'expo-router';
-
-const BackgroundImage = require('../assets/backgrounds/pump_logo.png');
 
 const Container = styled.View`
   flex: 1;
@@ -32,77 +26,15 @@ const HeaderTitle = styled.Text`
   font-weight: bold; /* Make it bold */
 `;
 
-const SearchIconContainer = styled.TouchableOpacity`
-  position: absolute;
-  right: 20px;
-`;
-
 const MainContent = styled.View`
   flex: 1;
   width: 100%;
   margin-top: -22px;
 `;
 
-const DotBarContainer = styled.View`
-  flex-direction: row;
-  margin-vertical: 20px;
-`;
-
-const Dot = styled.View`
-  width: 5px;
-  height: 5px;
-  border-radius: 2.5px;
-  background-color: #00ffff;
-  margin-horizontal: 3px;
-`;
-
-const ButtonRow = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const SideButton = styled.TouchableOpacity`
-  width: 100px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  border-color: #008f8f;
-  border-width: 2px;
-  margin-horizontal: 10px;
-`;
-
-const CenterButton = styled(LinearGradient)`
-  width: 150px;
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-`;
-
-const ButtonTextSmall = styled.Text`
-  color: white;
-  font-weight: bold;
-`;
-
-const ButtonTextLarge = styled.Text`
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-`;
-
-const DotBar = () => (
-  <DotBarContainer>
-    {Array.from({ length: 20 }).map((_, i) => (
-      <Dot key={i} />
-    ))}
-  </DotBarContainer>
-);
-
 export default function HomeScreen() {
   const [resultsModalVisible, setResultsModalVisible] = useState(false);
   const [selectedLeagueId, setSelectedLeagueId] = useState('');
-  const router = useRouter();
 
   const handleSelectLeague = (leagueId: string) => {
     setSelectedLeagueId(leagueId);
@@ -115,9 +47,6 @@ export default function HomeScreen() {
         <HeaderTitle>
           PIU: Rise - Random
         </HeaderTitle>
-        <SearchIconContainer onPress={() => router.push('/SearchScreen')}>
-          <FontAwesome5 name="search" size={24} color="white" />
-        </SearchIconContainer>
       </HeaderContainer>
 
       <MainContent>

@@ -4,6 +4,27 @@ import { songs, Song } from '@/data/data';
 import { useRouter } from 'expo-router';
 import styled from 'styled-components/native';
 
+const Screen = styled.View`
+  flex: 1;
+  background-color: #000;
+`;
+
+const HeaderContainer = styled.View`
+  width: 100%;
+  padding: 25px 20px;
+  background-color: #282828;
+  justify-content: center;
+  align-items: center;
+  border-bottom-width: 1px;
+  flex-direction: row;
+`;
+
+const HeaderTitle = styled.Text`
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+`;
+
 const Container = styled(ImageBackground).attrs({
   source: require('@/assets/backgrounds/we_love_your_step1.png'),
   imageStyle: { opacity: 0.1, resizeMode: 'cover' },
@@ -51,24 +72,29 @@ const SearchScreen = () => {
   };
 
   return (
-    <Container>
-      <SearchInput
-        placeholder="Search for a song..."
-        placeholderTextColor="#888"
-        value={query}
-        onChangeText={setQuery}
-      />
-      <FlatList
-        data={filteredSongs}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <SongItemContainer onPress={() => handleSelectSong(item)}>
-            <SongTitle>{item.title}</SongTitle>
-            <SongArtist>{item.artist}</SongArtist>
-          </SongItemContainer>
-        )}
-      />
-    </Container>
+    <Screen>
+      <HeaderContainer>
+        <HeaderTitle>Search Songs</HeaderTitle>
+      </HeaderContainer>
+      <Container>
+        <SearchInput
+          placeholder="Search for a song..."
+          placeholderTextColor="#888"
+          value={query}
+          onChangeText={setQuery}
+        />
+        <FlatList
+          data={filteredSongs}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <SongItemContainer onPress={() => handleSelectSong(item)}>
+              <SongTitle>{item.title}</SongTitle>
+              <SongArtist>{item.artist}</SongArtist>
+            </SongItemContainer>
+          )}
+        />
+      </Container>
+    </Screen>
   );
 };
 
