@@ -83,5 +83,32 @@ then synced back here and re-applied with the steps above. **No more hand-editin
 launch game → procdump64 -ma <PID> piu_dump.dmp → extract_nrbf.py → Deserialize.exe
 → build_songs.py → extract_banners.py → make_jpeg_and_package.py
 ```
-```
-```
+
+---
+
+## Next tasks (planned)
+
+### Linux machine — Explore toggle: same list, swap levels only
+The Single/Double toggle in the **Explore** tab (`app/(tabs)/explore.tsx`) must **not** show a different
+list per mode. It should stay one single song list and only change **which difficulty levels each row
+displays** (single levels vs. double levels) when toggled.
+
+- It's already a single `SectionList` grouped by version; the `sections` are built once and are independent
+  of the mode. The toggle only needs to switch the per-row inline levels (`item.levels[mode]`).
+- Gotcha to watch: `SectionList`/`VirtualizedList` memoizes cells, so rows may not re-render when only the
+  external `mode` state changes. Pass `extraData={mode}` to the `SectionList` so the inline level badges
+  update in place (same list, no remount/scroll reset).
+
+### Windows machine — Extract song preview audios
+Extract the short **audio previews** for all songs from the game so the app can offer a **Play icon** on
+each song (Explore rows and/or the song detail screen) for users to hear the preview. The game already
+plays a sound preview per song on song-select.
+
+- Likely location: the same `…/StreamingAssets/aa/StandaloneWindows64/preview_assets_<ID>/` bundles that
+  hold the banners and `previewvideo_*.bundle`. Look for the audio clip bundle there (Unity `AudioClip`).
+  See `EXTRACTION_REPORT.md` → "What the game files look like".
+- Output: one preview audio file per song named by the game's internal song ID (e.g. `10001.<ext>`),
+  mirroring the banner naming, then synced back here and bundled like the banners (a loader similar to
+  `utils/imageLoader.ts`).
+- Add the extraction step to `scripts/` and to `EXTRACTION_REPORT.md` → "How to regenerate" so it's
+  reproducible on future game updates.
