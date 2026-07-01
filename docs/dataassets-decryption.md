@@ -77,6 +77,45 @@ e.g. the preview for song `1808` = `SHA256("PREVIEWAUDIO1808")` (uppercase hex) 
    (`SHA256Managed`, UTF-8, `{0}{1}`, `X2`). Confirm empirically by brute-matching
    `SHA256(prefix+id)` against real filenames (`scripts/find_hash_format.py`).
 
+## Do the password/salt change on updates?
+
+**Usually not.** The key is baked into already-shipped `DataAssets`; rotating it would
+force re-encrypting all ~32 GB and break existing installs, so content patches (new
+songs) reuse the same key — new songs just appear as new `SHA256(<PREFIX>+id)` hashes.
+A **major/anti-tamper update** *could* rotate them, but it's uncommon.
+
+**Detect a rotation in one line** — decrypt a known song's preview and check the magic:
+```python
+# if this isn't b'ID3' / b'\xff\xfb', the secret changed -> redo steps 1-4 above
+python scripts/find_hash_format.py   # 0/415 matches also means the naming or key rotated
+```
+
+### Strategy to re-derive password + salt (the part that changes)
+
+The key/iv are **not stored** — they're PBKDF2 output. You must re-read the inputs from
+`Utility.SecurityPlayerPrefs..cctor`. Disassemble it (`scripts/disasm.py` @ its RVA from
+`dump.cs`) and read the setup literally. Watch for the traps that cost the most time:
+
+- **Two `Rfc2898DeriveBytes` are constructed.** The FIRST one's output is only
+  Base64-encoded into `_saltForKey` (a PlayerPrefs helper) — ignore it. The **AES**
+  key/iv come from the **SECOND** `Rfc2898DeriveBytes(password, salt, 1000)`.
+- **Two hard-coded strings, and the roles are swapped from what looks obvious.** The
+  password is the string passed as arg1 (`rdx`) to the second ctor; the other string
+  only feeds `_saltForKey`. Don't assume — read the ctor args.
+- **The salt is a `byte[]`, not a string** (loaded via `RuntimeHelpers.InitializeArray`
+  from a compile-time array). Extract it from the IL2CPP metadata field-default-value
+  blob with `scripts/get_salt.py`, and **self-verify**: `SHA256(salt).hex().upper()`
+  equals the Roslyn `<PrivateImplementationDetails>.<HASH>` field name that the cctor
+  references — so you know you grabbed the right bytes and length.
+- **Order matters:** `key = deriveBytes.GetBytes(keySize/8)` first (32 B), then
+  `iv = deriveBytes.GetBytes(blockSize/8)` (16 B) — i.e. `pbkdf2(pw,salt,1000,48)` →
+  `key=[:32]`, `iv=[32:48]`. PRF is HMAC-**SHA1** (Rfc2898 default), 1000 iterations.
+- **Disassembly gotcha:** game code is in the **`il2cpp`** PE section (RVA ≥ `0x4de000`),
+  not `.text`; the string-literal xref in `scripts/xref_strings.py` must scan that section.
+
+Then just re-run `scripts/extract_preview_audio.py` — it derives key/iv from the two
+constants at the top of the file, so you only edit `PASSWORD` and `SALT` there.
+
 ## Reproduce the extraction
 
 ```bash
