@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter, useFocusEffect } from 'expo-router';
 import { songs, Song } from '@/data/data';
 import styled from 'styled-components/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { getBannerImage } from '@/utils/imageLoader';
+import { getPreviewAudio, hasPreviewAudio } from '@/utils/audioLoader';
+import { useAudioPlayer } from 'expo-audio';
+import { usePreviewAudioSettings } from '@/contexts/PreviewAudioSettings';
 import * as WebBrowser from 'expo-web-browser';
 
 const MainContainer = styled.View`
@@ -86,12 +89,21 @@ const LevelText = styled.Text`
   font-weight: bold;
 `;
 
-const TopRightCloseButton = styled.TouchableOpacity`
+const TopButtonsRow = styled.View`
   position: absolute;
   top: 10px; /* Adjust for padding of MainContainer */
   right: 10px; /* Adjust for padding of MainContainer */
-  padding: 10px;
+  flex-direction: row;
+  align-items: center;
   z-index: 1;
+`;
+
+const MuteButton = styled.TouchableOpacity`
+  padding: 10px;
+`;
+
+const CloseButton = styled.TouchableOpacity`
+  padding: 10px;
 `;
 
 const BottomCloseButton = styled.TouchableOpacity`
@@ -130,6 +142,31 @@ const SongDetailScreen = () => {
   const router = useRouter();
   const song: Song | undefined = songs.find(s => s.id === songId);
 
+  const previewSource = song && hasPreviewAudio(song.id) ? getPreviewAudio(song.id) : null;
+  const player = useAudioPlayer(previewSource ?? undefined);
+  const { muted, toggleMuted } = usePreviewAudioSettings();
+
+  useEffect(() => {
+    player.loop = true;
+  }, [player]);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (previewSource && !muted) {
+        try {
+          player.play();
+        } catch {}
+      }
+      return () => {
+        // player may already be released (e.g. screen unmounted before blur fired)
+        try {
+          player.pause();
+        } catch {}
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [player, previewSource, muted])
+  );
+
   if (!song) {
     return (
       <MainContainer>
@@ -150,9 +187,16 @@ const SongDetailScreen = () => {
 
   return (
     <MainContainer>
-      <TopRightCloseButton onPress={() => router.back()}>
-        <FontAwesome5 name="times-circle" size={24} color="white" />
-      </TopRightCloseButton>
+      <TopButtonsRow>
+        {previewSource && (
+          <MuteButton onPress={toggleMuted}>
+            <FontAwesome5 name={muted ? 'volume-mute' : 'volume-up'} size={22} color="white" />
+          </MuteButton>
+        )}
+        <CloseButton onPress={() => router.back()}>
+          <FontAwesome5 name="times-circle" size={24} color="white" />
+        </CloseButton>
+      </TopButtonsRow>
       <ContentContainer>
         <HeaderContainer>
           {songImageSource && <SongBanner source={songImageSource} />}

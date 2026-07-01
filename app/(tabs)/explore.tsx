@@ -189,6 +189,7 @@ const ExploreScreen = () => {
       <SectionList
         sections={sections}
         keyExtractor={(item) => item.id}
+        extraData={mode}
         stickySectionHeadersEnabled
         initialNumToRender={15}
         renderSectionHeader={({ section: { title } }) => (

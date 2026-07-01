@@ -7,6 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import * as SystemUI from 'expo-system-ui';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { PreviewAudioSettingsProvider } from '@/contexts/PreviewAudioSettings';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -62,11 +63,13 @@ function RootLayoutNav() {
   return (
     <PaperProvider>
       <ThemeProvider value={CustomDarkTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-          <Stack.Screen name="song/[songId]" options={{ presentation: 'modal', headerShown: false }} />
-        </Stack>
+        <PreviewAudioSettingsProvider>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="song/[songId]" options={{ presentation: 'modal', headerShown: false }} />
+          </Stack>
+        </PreviewAudioSettingsProvider>
       </ThemeProvider>
     </PaperProvider>
   );

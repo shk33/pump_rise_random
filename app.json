@@ -35,7 +35,8 @@
     "plugins": [
       "expo-asset",
       "expo-router",
-      "expo-font"
+      "expo-font",
+      "expo-audio"
     ],
     "experiments": {
       "typedRoutes": true
