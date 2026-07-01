@@ -23,7 +23,7 @@
 | Banner / preview art | `…/StreamingAssets/aa/StandaloneWindows64/preview_assets_<ID>/preview_*.bundle` | Unity `Texture2D`/`Sprite` (1920×1080), unencrypted | ✅ Extracted directly (415) |
 | Preview videos | `…/preview_assets_<ID>/previewvideo_*.bundle` | Unity `VideoClip` | Not needed (available if wanted) |
 | Song metadata | `…/defaultlocalgroup_assets_db_*.bundle` → `db` & `tables` TextAssets | **AES/Rijndael + Xor (.NET CryptoStream)**; key inside `GameAssembly.dll` | 🔒 Encrypted on disk → recovered from memory |
-| Charts / audio / video | `…/PUMP IT UP RISE_Data/DataAssets/` (4804 hash-named files) | Same encryption | Not needed for this project |
+| Charts / audio / video | `…/PUMP IT UP RISE_Data/DataAssets/` (4804 hash-named files) | AES-256-CBC (key in `GameAssembly.dll`) | ✅ **Now decrypted** — key recovered via IL2CPP. Preview audio (415) bundled; see `docs/dataassets-decryption.md` |
 
 Why not decrypt the files directly: the bundles are encrypted with a per-file keystream (entropy ≈ 8.0; a statistical known-plaintext attack failed), and the key lives in compiled IL2CPP native code. The game itself holds the key, so the pragmatic route was to let the game decrypt and read it back from RAM.
 

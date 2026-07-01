@@ -99,16 +99,41 @@ displays** (single levels vs. double levels) when toggled.
   external `mode` state changes. Pass `extraData={mode}` to the `SectionList` so the inline level badges
   update in place (same list, no remount/scroll reset).
 
-### Windows machine — Extract song preview audios
-Extract the short **audio previews** for all songs from the game so the app can offer a **Play icon** on
-each song (Explore rows and/or the song detail screen) for users to hear the preview. The game already
-plays a sound preview per song on song-select.
+### Linux machine — Preview audio Play button (wire up the bundled previews)
+The preview MP3s are already extracted and bundled (`assets/previews/<id>.mp3`, 415 songs) with a
+loader `utils/audioLoader.ts`. What's left is the playback UI:
 
-- Likely location: the same `…/StreamingAssets/aa/StandaloneWindows64/preview_assets_<ID>/` bundles that
-  hold the banners and `previewvideo_*.bundle`. Look for the audio clip bundle there (Unity `AudioClip`).
-  See `EXTRACTION_REPORT.md` → "What the game files look like".
-- Output: one preview audio file per song named by the game's internal song ID (e.g. `10001.<ext>`),
-  mirroring the banner naming, then synced back here and bundled like the banners (a loader similar to
-  `utils/imageLoader.ts`).
-- Add the extraction step to `scripts/` and to `EXTRACTION_REPORT.md` → "How to regenerate" so it's
-  reproducible on future game updates.
+- Add an audio lib (Expo SDK 54): `npx expo install expo-audio`.
+- Add a **Play icon** on song rows (Explore tab) and/or the song detail screen. On press:
+  ```ts
+  import { useAudioPlayer } from 'expo-audio';
+  import { getPreviewAudio } from '@/utils/audioLoader';
+  const player = useAudioPlayer(getPreviewAudio(song.id));
+  // play/pause on tap; getPreviewAudio returns null if a song has no preview (none currently)
+  ```
+- Only show the icon when `hasPreviewAudio(song.id)` is true (all 415 have one today).
+- Stop/replace the currently-playing preview when another is tapped (mirror the game: one preview at a time).
+- Previews are mono 64 kbps ~10 s clips; fine to loop or play once.
+
+See `docs/dataassets-decryption.md` for how the audio was obtained (no re-extraction needed for this task).
+
+### Windows machine — Extract song preview audios ✅ DONE (2026-07-01)
+Per-song **preview audio** extracted and bundled. The game plays a sound preview per song on
+song-select; that audio was **not** in the `aa/` bundles (the `previewvideo_*` are silent VP8) —
+it lives **AES-encrypted** in `…/PUMP IT UP RISE_Data/DataAssets/`. Solved by recovering the key
+from `GameAssembly.dll` (IL2CPP), not a memory dump.
+
+Delivered:
+- `assets/previews/<id>.mp3` — **415/415 songs**, mono 64 kbps ~10 s clips (~33 MB total).
+- `utils/audioLoader.ts` — `getPreviewAudio(songId)` (mirrors `utils/imageLoader.ts`).
+- `docs/dataassets-decryption.md` — full reverse-engineering writeup (AES key, salt, PBKDF2,
+  the `SHA256(<PREFIX>+id)` filename scheme, HashPrefix enum) + how to redo it on a game update.
+- `docs/scripts/` — extraction + RE scripts (`extract_preview_audio.py`, `transcode_previews.py`,
+  `extract_all_songs.py`, plus the IL2CPP disasm/xref/salt helpers).
+
+Still TODO (small): playback UI — add an audio lib (`npx expo install expo-audio`) and a Play icon
+on Explore rows / song detail that calls `useAudioPlayer(getPreviewAudio(song.id)).play()`.
+
+> Bonus: the same key + `SHA256(<PREFIX>+id)` scheme decrypts **everything** in DataAssets —
+> full songs (`AUDIO`+id), BGA videos (`VIDEO`+id), charts (`STEP`/`PLAYTYPE`+id, `NX20` format).
+> `docs/scripts/extract_all_songs.py` dumps all 415 full songs as MP3.
