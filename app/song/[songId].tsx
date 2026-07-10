@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, Platform } from 'react-native';
 import { useLocalSearchParams, useRouter, useFocusEffect } from 'expo-router';
 import { songs, Song } from '@/data/data';
 import styled from 'styled-components/native';
@@ -152,12 +152,38 @@ const SongDetailScreen = () => {
 
   useFocusEffect(
     useCallback(() => {
-      if (previewSource && !muted) {
-        try {
-          player.play();
-        } catch {}
+      const startPlayback = () => {
+        if (previewSource && !muted) {
+          try {
+            player.play();
+          } catch {}
+        }
+      };
+
+      startPlayback();
+
+      // Browsers block audio autoplay until the user interacts with the page, so
+      // the initial play() above may be ignored on web. Retry on the first user
+      // gesture anywhere on the page, then stop listening. No-op on native.
+      let removeWebFallback: (() => void) | undefined;
+      if (
+        Platform.OS === 'web' &&
+        previewSource &&
+        !muted &&
+        typeof document !== 'undefined'
+      ) {
+        const events = ['pointerdown', 'keydown', 'touchstart'];
+        const onFirstInteraction = () => {
+          startPlayback();
+          removeWebFallback?.();
+        };
+        events.forEach((e) => document.addEventListener(e, onFirstInteraction));
+        removeWebFallback = () =>
+          events.forEach((e) => document.removeEventListener(e, onFirstInteraction));
       }
+
       return () => {
+        removeWebFallback?.();
         // player may already be released (e.g. screen unmounted before blur fired)
         try {
           player.pause();
